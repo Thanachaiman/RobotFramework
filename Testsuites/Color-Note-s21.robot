@@ -59,16 +59,10 @@ Delete Note
     Click Element    id=com.socialnmobile.dictapps.notepad.color.note:id/icon_nav
     # xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/b.k.a.a/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ListView/android.widget.LinearLayout[4]/android.widget.ImageView
     Wait Until Element Is Visible
-    ...    xpath=//hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/
-    ...    android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/
-    ...    b.k.a.a/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.
-    ...    RelativeLayout/android.widget.ListView/android.widget.LinearLayout[4]
-    ...    timeout=5000ms
+    ...    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/b.k.a.a/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ListView/android.widget.LinearLayout[4]/android.widget.TextView
     Click Element
-    ...    xpath=//hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/
-    ...    android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/
-    ...    b.k.a.a/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.
-    ...    RelativeLayout/android.widget.ListView/android.widget.LinearLayout[4]
+    ...    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/b.k.a.a/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ListView/android.widget.LinearLayout[4]/android.widget.TextView
+
     Element Text Should Be
     ...    id=com.socialnmobile.dictapps.notepad.color.note:id/title
     ...    Naruto Dragon Ball Attack on titan
