@@ -1,0 +1,20 @@
+1702011010337	geckodriver	INFO	Listening on 127.0.0.1:50710
+1702011013422	mozrunner::runner	INFO	Running command: "C:\\Users\\thanachai\\.cache\\selenium\\firefox\\win64\\120.0.1\\firefox.exe" "--marionette" "--remote-debu ... "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\THANAC~1\\AppData\\Local\\Temp\\rust_mozprofileXsNjdN"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1702011013946	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1702011014010	Marionette	INFO	Listening on port 50718
+WebDriver BiDi listening on ws://127.0.0.1:50711
+Read port: 50718
+1702011014169	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:50711/devtools/browser/cf150b27-3ce0-4900-a07c-4033c77685c8
+JavaScript warning: https://snap.licdn.com/li.lms-analytics/insight.old.min.js, line 1: unreachable code after return statement
+1702011044477	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+JavaScript warning: https://katalon.com/_next/static/chunks/main-ce61528e56178668.js, line 1: Script terminated by timeout at:
+o@https://katalon.com/_next/static/chunks/main-ce61528e56178668.js:1:98188
+78018/U/<@https://katalon.com/_next/static/chunks/main-ce61528e56178668.js:1:98653
+r@https://katalon.com/_next/static/chunks/main-ce61528e56178668.js:1:94464
+
+1702011809666	Marionette	INFO	Stopped listening on port 50718
+Dynamically enable window occlusion 1

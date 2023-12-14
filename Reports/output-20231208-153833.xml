@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.3 on win32)" generated="20231208 15:38:33.483" rpa="false" schemaversion="4">
+<suite id="s1" name="Keyword-With-Python" source="D:\Robot_framework\testsuites\keyword-with-python.robot">
+<test id="s1-t1" name="print print_hello_world" line="9">
+<kw name="print_hello_world">
+<var>${string}</var>
+<msg timestamp="20231208 15:38:33.721" level="FAIL">No keyword with name 'print_hello_world' found.</msg>
+<status status="FAIL" starttime="20231208 15:38:33.721" endtime="20231208 15:38:33.721"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${string}</arg>
+<arg>hello</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" starttime="20231208 15:38:33.721" endtime="20231208 15:38:33.721"/>
+</kw>
+<status status="FAIL" starttime="20231208 15:38:33.718" endtime="20231208 15:38:33.721">No keyword with name 'print_hello_world' found.</status>
+</test>
+<status status="FAIL" starttime="20231208 15:38:33.486" endtime="20231208 15:38:33.722"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Keyword-With-Python">Keyword-With-Python</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

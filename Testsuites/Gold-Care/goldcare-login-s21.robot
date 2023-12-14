@@ -1,0 +1,72 @@
+*** Settings ***
+Library         AppiumLibrary
+# Variables    ../desirecap/s11.py
+Variables       ../desirecap/s21.py
+
+
+*** Test Cases ***
+Test Login
+    Log To Console    Hello Donkey 2
+    open application    ${ximplerServerUrl}    udid=${desired_caps}[udid]
+    ...    platformName=${desired_caps}[platformName]
+    ...    platformVersion=${desired_caps}[platformVersion]
+    ...    app=${desired_caps}[app]
+    ...    deviceName=${desired_caps}[deviceName]
+    ...    automationName=${desired_caps}[automationName]
+
+    # accessibility_id=ข้าม
+
+    Wait Until Element Is Visible    accessibility_id=ข้าม    timeout=5000ms
+
+    Click Element    accessibility_id=ข้าม
+    # xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText
+
+    Wait Until Element Is Visible
+    ...    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText
+    ...    timeout=5000ms
+
+    Click Element
+    ...    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText
+    Wait Until Element Is Visible
+    ...    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ScrollView/android.widget.EditText
+    ...    timeout=5000ms
+    Input Text
+    ...    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ScrollView/android.widget.EditText
+    ...    0999999991
+
+    Go Back
+
+    Tap    ${None}    218    1330
+    # accessibility_id=เข้าสู่ระบบ
+
+    Wait Until Element Is Visible    accessibility_id=เข้าสู่ระบบ    timeout=5000ms
+
+    Click Element    accessibility_id=เข้าสู่ระบบ
+    # xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText
+
+    Wait Until Element Is Visible
+    ...    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText
+    ...    timeout=5000ms
+
+    Click Element
+    ...    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText
+
+    Wait Until Element Is Visible
+    ...    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText
+    ...    timeout=5000ms
+
+    Input Text
+    ...    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText
+    ...    100010
+    Sleep    1s
+    Tap    ${None}    542    1411
+    Sleep    1s
+
+    Log to Console    Test bar
+    # xpath=(//android.view.View[@content-desc="รายการที่แจ้ง"])[2]
+    Wait Until Element Is Visible    xpath=(//android.view.View[@content-desc="รายการที่แจ้ง"])[2]    timeout=1s
+    Log to Console    Here 2
+    Click Element    xpath=(//android.view.View[@content-desc="รายการที่แจ้ง"])[2]
+    Element Should Contain    xpath=(//android.view.View[@content-desc="รายการปัจจุบัน แท็บที่ 1 จาก 2"])    รายการ
+
+    close application

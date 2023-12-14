@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.3 on win32)" generated="20231208 15:20:13.966" rpa="false" schemaversion="4">
+<suite id="s1" name="First-Script" source="D:\Robot_framework\testsuites\first-script.robot">
+<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
+<arg>url=https://katalon-demo-cura.herokuapp.com/</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231208 15:20:14.264" level="INFO">Opening browser 'chrome' to base url 'https://katalon-demo-cura.herokuapp.com/'.</msg>
+<status status="PASS" starttime="20231208 15:20:14.264" endtime="20231208 15:20:48.428"/>
+</kw>
+<test id="s1-t1" name="Verify login pass with invalid password" line="10">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://*[@id="btn-make-appointment"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231208 15:20:48.430" level="INFO">Clicking element 'xpath://*[@id="btn-make-appointment"]'.</msg>
+<status status="PASS" starttime="20231208 15:20:48.429" endtime="20231208 15:20:48.894"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://*[@id="txt-username"]</arg>
+<arg>${VALIDNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231208 15:20:48.895" level="INFO">Typing text 'John Doe' into text field 'xpath://*[@id="txt-username"]'.</msg>
+<status status="PASS" starttime="20231208 15:20:48.895" endtime="20231208 15:20:49.026"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://*[@id="txt-password"]</arg>
+<arg>${INVALIDPASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231208 15:20:49.028" level="INFO">Typing text 'Robot Framework' into text field 'xpath://*[@id="txt-password"]'.</msg>
+<status status="PASS" starttime="20231208 15:20:49.026" endtime="20231208 15:20:49.171"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://*[@id="btn-login"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231208 15:20:49.172" level="INFO">Clicking element 'xpath://*[@id="btn-login"]'.</msg>
+<status status="PASS" starttime="20231208 15:20:49.171" endtime="20231208 15:20:49.926"/>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<arg>https://katalon-demo-cura.herokuapp.com/profile.php#login</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<msg timestamp="20231208 15:20:49.931" level="INFO">Current location is 'https://katalon-demo-cura.herokuapp.com/profile.php#login'.</msg>
+<status status="PASS" starttime="20231208 15:20:49.927" endtime="20231208 15:20:49.931"/>
+</kw>
+<status status="PASS" starttime="20231208 15:20:48.428" endtime="20231208 15:20:49.932"/>
+</test>
+<test id="s1-t2" name="Verify login pass with invalid username" line="18">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://*[@id="btn-make-appointment"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231208 15:20:49.934" level="INFO">Clicking element 'xpath://*[@id="btn-make-appointment"]'.</msg>
+<status status="PASS" starttime="20231208 15:20:49.934" endtime="20231208 15:20:49.971"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://*[@id="txt-username"]</arg>
+<arg>${INVALIDNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231208 15:20:49.972" level="INFO">Typing text 'Robot Framework' into text field 'xpath://*[@id="txt-username"]'.</msg>
+<status status="PASS" starttime="20231208 15:20:49.972" endtime="20231208 15:20:50.051"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://*[@id="txt-password"]</arg>
+<arg>${VALIDPASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231208 15:20:50.052" level="INFO">Typing text 'ThisIsNotAPassword' into text field 'xpath://*[@id="txt-password"]'.</msg>
+<status status="PASS" starttime="20231208 15:20:50.051" endtime="20231208 15:20:50.135"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://*[@id="btn-login"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231208 15:20:50.135" level="INFO">Clicking element 'xpath://*[@id="btn-login"]'.</msg>
+<status status="PASS" starttime="20231208 15:20:50.135" endtime="20231208 15:20:50.850"/>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<arg>https://katalon-demo-cura.herokuapp.com/profile.php#login</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<msg timestamp="20231208 15:20:50.855" level="INFO">Current location is 'https://katalon-demo-cura.herokuapp.com/profile.php#login'.</msg>
+<status status="PASS" starttime="20231208 15:20:50.850" endtime="20231208 15:20:50.855"/>
+</kw>
+<status status="PASS" starttime="20231208 15:20:49.932" endtime="20231208 15:20:50.855"/>
+</test>
+<test id="s1-t3" name="Verify login pass with valid user" line="26">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://*[@id="btn-make-appointment"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231208 15:20:50.857" level="INFO">Clicking element 'xpath://*[@id="btn-make-appointment"]'.</msg>
+<status status="PASS" starttime="20231208 15:20:50.856" endtime="20231208 15:20:50.892"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://*[@id="txt-username"]</arg>
+<arg>${VALIDNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231208 15:20:50.893" level="INFO">Typing text 'John Doe' into text field 'xpath://*[@id="txt-username"]'.</msg>
+<status status="PASS" starttime="20231208 15:20:50.892" endtime="20231208 15:20:50.964"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://*[@id="txt-password"]</arg>
+<arg>${VALIDPASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231208 15:20:50.964" level="INFO">Typing text 'ThisIsNotAPassword' into text field 'xpath://*[@id="txt-password"]'.</msg>
+<status status="PASS" starttime="20231208 15:20:50.964" endtime="20231208 15:20:51.035"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://*[@id="btn-login"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231208 15:20:51.036" level="INFO">Clicking element 'xpath://*[@id="btn-login"]'.</msg>
+<status status="PASS" starttime="20231208 15:20:51.035" endtime="20231208 15:20:51.747"/>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<arg>https://katalon-demo-cura.herokuapp.com/#appointment</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<msg timestamp="20231208 15:20:51.754" level="INFO">Current location is 'https://katalon-demo-cura.herokuapp.com/#appointment'.</msg>
+<status status="PASS" starttime="20231208 15:20:51.747" endtime="20231208 15:20:51.754"/>
+</kw>
+<status status="PASS" starttime="20231208 15:20:50.856" endtime="20231208 15:20:51.754"/>
+</test>
+<status status="PASS" starttime="20231208 15:20:13.967" endtime="20231208 15:20:51.755"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="First-Script">First-Script</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20231208 15:20:14.262" level="WARN">Imported resource file 'D:\Robot_framework\Keywords\login.robot' is empty.</msg>
+</errors>
+</robot>
