@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.3 on win32)" generated="20231214 10:58:39.088" rpa="false" schemaversion="4">
-<suite id="s1" name="Color-Note-s21" source="D:\Robot_framework\Testsuites\Color-Note\Color-Note-s21.robot">
+<robot generator="Robot 6.1.1 (Python 3.11.3 on win32)" generated="20231214 11:04:32.166" rpa="false" schemaversion="4">
+<suite id="s1" name="Color-Note-note8" source="D:\Robot_framework\Testsuites\Color-Note\Color-Note-note8.robot">
 <kw name="Open Application" library="AppiumLibrary" type="SETUP">
 <arg>${ximplerServerUrl}</arg>
 <arg>udid=${desired_caps}[udid]</arg>
@@ -16,182 +16,182 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 | remote_url          | Yes    | Appium server url |
 | alias               | no     | alias             |
 | strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
-<status status="PASS" starttime="20231214 10:58:39.297" endtime="20231214 10:59:01.496"/>
+<status status="PASS" starttime="20231214 11:04:32.415" endtime="20231214 11:05:01.544"/>
 </kw>
 <test id="s1-t1" name="Add Note" line="15">
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
 <arg>id=com.socialnmobile.dictapps.notepad.color.note:id/btn_start_skip</arg>
 <arg>timeout=5000ms</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<msg timestamp="20231214 10:59:02.913" level="INFO">criteria is com.socialnmobile.dictapps.notepad.color.note:id/btn_start_skip</msg>
-<status status="PASS" starttime="20231214 10:59:01.496" endtime="20231214 10:59:02.913"/>
+<msg timestamp="20231214 11:05:03.549" level="INFO">criteria is com.socialnmobile.dictapps.notepad.color.note:id/btn_start_skip</msg>
+<status status="PASS" starttime="20231214 11:05:01.544" endtime="20231214 11:05:03.550"/>
 </kw>
 <kw name="Click Element" library="AppiumLibrary">
 <arg>id=com.socialnmobile.dictapps.notepad.color.note:id/btn_start_skip</arg>
 <doc>Click element identified by `locator`.</doc>
-<msg timestamp="20231214 10:59:02.915" level="INFO">Clicking element 'id=com.socialnmobile.dictapps.notepad.color.note:id/btn_start_skip'.</msg>
-<msg timestamp="20231214 10:59:03.723" level="INFO">criteria is com.socialnmobile.dictapps.notepad.color.note:id/btn_start_skip</msg>
-<status status="PASS" starttime="20231214 10:59:02.914" endtime="20231214 10:59:03.723"/>
+<msg timestamp="20231214 11:05:03.552" level="INFO">Clicking element 'id=com.socialnmobile.dictapps.notepad.color.note:id/btn_start_skip'.</msg>
+<msg timestamp="20231214 11:05:05.281" level="INFO">criteria is com.socialnmobile.dictapps.notepad.color.note:id/btn_start_skip</msg>
+<status status="PASS" starttime="20231214 11:05:03.550" endtime="20231214 11:05:05.281"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
 <arg>id=com.socialnmobile.dictapps.notepad.color.note:id/main_btn1</arg>
 <arg>timeout=5000ms</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<msg timestamp="20231214 10:59:04.999" level="INFO">criteria is com.socialnmobile.dictapps.notepad.color.note:id/main_btn1</msg>
-<status status="PASS" starttime="20231214 10:59:03.723" endtime="20231214 10:59:04.999"/>
+<msg timestamp="20231214 11:05:06.966" level="INFO">criteria is com.socialnmobile.dictapps.notepad.color.note:id/main_btn1</msg>
+<status status="PASS" starttime="20231214 11:05:05.281" endtime="20231214 11:05:06.966"/>
 </kw>
 <kw name="Click Element" library="AppiumLibrary">
 <arg>id=com.socialnmobile.dictapps.notepad.color.note:id/main_btn1</arg>
 <doc>Click element identified by `locator`.</doc>
-<msg timestamp="20231214 10:59:05.001" level="INFO">Clicking element 'id=com.socialnmobile.dictapps.notepad.color.note:id/main_btn1'.</msg>
-<msg timestamp="20231214 10:59:06.578" level="INFO">criteria is com.socialnmobile.dictapps.notepad.color.note:id/main_btn1</msg>
-<status status="PASS" starttime="20231214 10:59:04.999" endtime="20231214 10:59:06.579"/>
+<msg timestamp="20231214 11:05:06.968" level="INFO">Clicking element 'id=com.socialnmobile.dictapps.notepad.color.note:id/main_btn1'.</msg>
+<msg timestamp="20231214 11:05:08.202" level="INFO">criteria is com.socialnmobile.dictapps.notepad.color.note:id/main_btn1</msg>
+<status status="PASS" starttime="20231214 11:05:06.967" endtime="20231214 11:05:08.202"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
 <arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[1]/android.widget.TextView</arg>
 <arg>timeout=5000ms</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<msg timestamp="20231214 10:59:07.913" level="INFO">xpath criteria: /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[1]/android.widget.TextView</msg>
-<status status="PASS" starttime="20231214 10:59:06.585" endtime="20231214 10:59:07.913"/>
+<msg timestamp="20231214 11:05:10.389" level="INFO">xpath criteria: /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[1]/android.widget.TextView</msg>
+<status status="PASS" starttime="20231214 11:05:08.203" endtime="20231214 11:05:10.389"/>
 </kw>
 <kw name="Click Element" library="AppiumLibrary">
 <arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[1]/android.widget.TextView</arg>
 <doc>Click element identified by `locator`.</doc>
-<msg timestamp="20231214 10:59:07.915" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[1]/android.widget.TextView'.</msg>
-<msg timestamp="20231214 10:59:09.709" level="INFO">xpath criteria: /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[1]/android.widget.TextView</msg>
-<status status="PASS" starttime="20231214 10:59:07.913" endtime="20231214 10:59:09.709"/>
+<msg timestamp="20231214 11:05:10.391" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[1]/android.widget.TextView'.</msg>
+<msg timestamp="20231214 11:05:13.646" level="INFO">xpath criteria: /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[1]/android.widget.TextView</msg>
+<status status="PASS" starttime="20231214 11:05:10.389" endtime="20231214 11:05:13.646"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
 <arg>id=com.socialnmobile.dictapps.notepad.color.note:id/edit_note</arg>
 <arg>timeout=5000ms</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<msg timestamp="20231214 10:59:10.444" level="INFO">criteria is com.socialnmobile.dictapps.notepad.color.note:id/edit_note</msg>
-<status status="PASS" starttime="20231214 10:59:09.709" endtime="20231214 10:59:10.444"/>
+<msg timestamp="20231214 11:05:14.718" level="INFO">criteria is com.socialnmobile.dictapps.notepad.color.note:id/edit_note</msg>
+<status status="PASS" starttime="20231214 11:05:13.647" endtime="20231214 11:05:14.718"/>
 </kw>
 <kw name="Input Text" library="AppiumLibrary">
 <arg>id=com.socialnmobile.dictapps.notepad.color.note:id/edit_note</arg>
 <arg>Naruto Dragon Ball Attack on titan</arg>
 <doc>Types the given `text` into text field identified by `locator`.</doc>
-<msg timestamp="20231214 10:59:10.445" level="INFO">Typing text 'Naruto Dragon Ball Attack on titan' into text field 'id=com.socialnmobile.dictapps.notepad.color.note:id/edit_note'</msg>
-<msg timestamp="20231214 10:59:11.229" level="INFO">criteria is com.socialnmobile.dictapps.notepad.color.note:id/edit_note</msg>
-<status status="PASS" starttime="20231214 10:59:10.444" endtime="20231214 10:59:11.229"/>
+<msg timestamp="20231214 11:05:14.720" level="INFO">Typing text 'Naruto Dragon Ball Attack on titan' into text field 'id=com.socialnmobile.dictapps.notepad.color.note:id/edit_note'</msg>
+<msg timestamp="20231214 11:05:15.821" level="INFO">criteria is com.socialnmobile.dictapps.notepad.color.note:id/edit_note</msg>
+<status status="PASS" starttime="20231214 11:05:14.719" endtime="20231214 11:05:15.821"/>
 </kw>
 <kw name="Go Back" library="AppiumLibrary">
 <doc>Goes one step backward in the browser history.</doc>
-<status status="PASS" starttime="20231214 10:59:11.229" endtime="20231214 10:59:11.883"/>
+<status status="PASS" starttime="20231214 11:05:15.821" endtime="20231214 11:05:17.096"/>
 </kw>
 <kw name="Go Back" library="AppiumLibrary">
 <doc>Goes one step backward in the browser history.</doc>
-<status status="PASS" starttime="20231214 10:59:11.884" endtime="20231214 10:59:12.600"/>
+<status status="PASS" starttime="20231214 11:05:17.096" endtime="20231214 11:05:18.316"/>
 </kw>
 <kw name="Element Text Should Be" library="AppiumLibrary">
 <arg>id=com.socialnmobile.dictapps.notepad.color.note:id/edit_title</arg>
 <arg>Naruto Dragon Ball Attack on titan</arg>
 <doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
-<msg timestamp="20231214 10:59:12.601" level="INFO">Verifying element 'id=com.socialnmobile.dictapps.notepad.color.note:id/edit_title' contains exactly text 'Naruto Dragon Ball Attack on titan'.</msg>
-<msg timestamp="20231214 10:59:13.611" level="INFO">criteria is com.socialnmobile.dictapps.notepad.color.note:id/edit_title</msg>
-<status status="PASS" starttime="20231214 10:59:12.600" endtime="20231214 10:59:13.611"/>
+<msg timestamp="20231214 11:05:18.317" level="INFO">Verifying element 'id=com.socialnmobile.dictapps.notepad.color.note:id/edit_title' contains exactly text 'Naruto Dragon Ball Attack on titan'.</msg>
+<msg timestamp="20231214 11:05:19.355" level="INFO">criteria is com.socialnmobile.dictapps.notepad.color.note:id/edit_title</msg>
+<status status="PASS" starttime="20231214 11:05:18.316" endtime="20231214 11:05:19.355"/>
 </kw>
 <kw name="Element Text Should Be" library="AppiumLibrary">
 <arg>id=com.socialnmobile.dictapps.notepad.color.note:id/view_note</arg>
 <arg>Naruto Dragon Ball Attack on titan</arg>
 <doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
-<msg timestamp="20231214 10:59:13.614" level="INFO">Verifying element 'id=com.socialnmobile.dictapps.notepad.color.note:id/view_note' contains exactly text 'Naruto Dragon Ball Attack on titan'.</msg>
-<msg timestamp="20231214 10:59:14.290" level="INFO">criteria is com.socialnmobile.dictapps.notepad.color.note:id/view_note</msg>
-<status status="PASS" starttime="20231214 10:59:13.613" endtime="20231214 10:59:14.290"/>
+<msg timestamp="20231214 11:05:19.355" level="INFO">Verifying element 'id=com.socialnmobile.dictapps.notepad.color.note:id/view_note' contains exactly text 'Naruto Dragon Ball Attack on titan'.</msg>
+<msg timestamp="20231214 11:05:21.115" level="INFO">criteria is com.socialnmobile.dictapps.notepad.color.note:id/view_note</msg>
+<status status="PASS" starttime="20231214 11:05:19.355" endtime="20231214 11:05:21.115"/>
 </kw>
-<status status="PASS" starttime="20231214 10:59:01.496" endtime="20231214 10:59:14.290"/>
+<status status="PASS" starttime="20231214 11:05:01.544" endtime="20231214 11:05:21.116"/>
 </test>
 <test id="s1-t2" name="Delete Note" line="44">
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
 <arg>accessibility_id=More</arg>
 <arg>timeout=5000ms</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20231214 10:59:14.291" endtime="20231214 10:59:15.021"/>
+<status status="PASS" starttime="20231214 11:05:21.117" endtime="20231214 11:05:22.144"/>
 </kw>
 <kw name="Click Element" library="AppiumLibrary">
 <arg>accessibility_id=More</arg>
 <doc>Click element identified by `locator`.</doc>
-<msg timestamp="20231214 10:59:15.022" level="INFO">Clicking element 'accessibility_id=More'.</msg>
-<status status="PASS" starttime="20231214 10:59:15.021" endtime="20231214 10:59:15.793"/>
+<msg timestamp="20231214 11:05:22.145" level="INFO">Clicking element 'accessibility_id=More'.</msg>
+<status status="PASS" starttime="20231214 11:05:22.144" endtime="20231214 11:05:23.257"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
 <arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[7]/android.widget.ImageView</arg>
 <arg>timeout=5000ms</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<msg timestamp="20231214 10:59:16.832" level="INFO">xpath criteria: /hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[7]/android.widget.ImageView</msg>
-<status status="PASS" starttime="20231214 10:59:15.793" endtime="20231214 10:59:16.832"/>
+<msg timestamp="20231214 11:05:25.136" level="INFO">xpath criteria: /hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[7]/android.widget.ImageView</msg>
+<status status="PASS" starttime="20231214 11:05:23.257" endtime="20231214 11:05:25.136"/>
 </kw>
 <kw name="Click Element" library="AppiumLibrary">
 <arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[7]/android.widget.ImageView</arg>
 <doc>Click element identified by `locator`.</doc>
-<msg timestamp="20231214 10:59:16.836" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[7]/android.widget.ImageView'.</msg>
-<msg timestamp="20231214 10:59:18.216" level="INFO">xpath criteria: /hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[7]/android.widget.ImageView</msg>
-<status status="PASS" starttime="20231214 10:59:16.835" endtime="20231214 10:59:18.216"/>
+<msg timestamp="20231214 11:05:25.137" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[7]/android.widget.ImageView'.</msg>
+<msg timestamp="20231214 11:05:26.924" level="INFO">xpath criteria: /hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[7]/android.widget.ImageView</msg>
+<status status="PASS" starttime="20231214 11:05:25.136" endtime="20231214 11:05:26.924"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
 <arg>id=android:id/button1</arg>
 <arg>timeout=5000ms</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<msg timestamp="20231214 10:59:18.916" level="INFO">criteria is android:id/button1</msg>
-<status status="PASS" starttime="20231214 10:59:18.216" endtime="20231214 10:59:18.916"/>
+<msg timestamp="20231214 11:05:28.841" level="INFO">criteria is android:id/button1</msg>
+<status status="PASS" starttime="20231214 11:05:26.924" endtime="20231214 11:05:28.841"/>
 </kw>
 <kw name="Click Element" library="AppiumLibrary">
 <arg>id=android:id/button1</arg>
 <doc>Click element identified by `locator`.</doc>
-<msg timestamp="20231214 10:59:18.917" level="INFO">Clicking element 'id=android:id/button1'.</msg>
-<msg timestamp="20231214 10:59:19.610" level="INFO">criteria is android:id/button1</msg>
-<status status="PASS" starttime="20231214 10:59:18.916" endtime="20231214 10:59:19.610"/>
+<msg timestamp="20231214 11:05:28.841" level="INFO">Clicking element 'id=android:id/button1'.</msg>
+<msg timestamp="20231214 11:05:29.850" level="INFO">criteria is android:id/button1</msg>
+<status status="PASS" starttime="20231214 11:05:28.841" endtime="20231214 11:05:29.850"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
 <arg>id=com.socialnmobile.dictapps.notepad.color.note:id/main_btn3</arg>
 <arg>timeout=5000ms</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<msg timestamp="20231214 10:59:21.011" level="INFO">criteria is com.socialnmobile.dictapps.notepad.color.note:id/main_btn3</msg>
-<status status="PASS" starttime="20231214 10:59:19.610" endtime="20231214 10:59:21.011"/>
+<msg timestamp="20231214 11:05:31.988" level="INFO">criteria is com.socialnmobile.dictapps.notepad.color.note:id/main_btn3</msg>
+<status status="PASS" starttime="20231214 11:05:29.850" endtime="20231214 11:05:31.988"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
 <arg>id=com.socialnmobile.dictapps.notepad.color.note:id/icon_nav</arg>
 <arg>timeout=5000ms</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<msg timestamp="20231214 10:59:21.881" level="INFO">criteria is com.socialnmobile.dictapps.notepad.color.note:id/icon_nav</msg>
-<status status="PASS" starttime="20231214 10:59:21.012" endtime="20231214 10:59:21.881"/>
+<msg timestamp="20231214 11:05:33.130" level="INFO">criteria is com.socialnmobile.dictapps.notepad.color.note:id/icon_nav</msg>
+<status status="PASS" starttime="20231214 11:05:31.988" endtime="20231214 11:05:33.130"/>
 </kw>
 <kw name="Click Element" library="AppiumLibrary">
 <arg>id=com.socialnmobile.dictapps.notepad.color.note:id/icon_nav</arg>
 <doc>Click element identified by `locator`.</doc>
-<msg timestamp="20231214 10:59:21.882" level="INFO">Clicking element 'id=com.socialnmobile.dictapps.notepad.color.note:id/icon_nav'.</msg>
-<msg timestamp="20231214 10:59:23.608" level="INFO">criteria is com.socialnmobile.dictapps.notepad.color.note:id/icon_nav</msg>
-<status status="PASS" starttime="20231214 10:59:21.881" endtime="20231214 10:59:23.608"/>
+<msg timestamp="20231214 11:05:33.131" level="INFO">Clicking element 'id=com.socialnmobile.dictapps.notepad.color.note:id/icon_nav'.</msg>
+<msg timestamp="20231214 11:05:34.324" level="INFO">criteria is com.socialnmobile.dictapps.notepad.color.note:id/icon_nav</msg>
+<status status="PASS" starttime="20231214 11:05:33.130" endtime="20231214 11:05:34.324"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
 <arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/b.k.a.a/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ListView/android.widget.LinearLayout[4]/android.widget.TextView</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<msg timestamp="20231214 10:59:24.715" level="INFO">xpath criteria: /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/b.k.a.a/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ListView/android.widget.LinearLayout[4]/android.widget.TextView</msg>
-<status status="PASS" starttime="20231214 10:59:23.609" endtime="20231214 10:59:24.715"/>
+<msg timestamp="20231214 11:05:36.435" level="INFO">xpath criteria: /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/b.k.a.a/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ListView/android.widget.LinearLayout[4]/android.widget.TextView</msg>
+<status status="PASS" starttime="20231214 11:05:34.324" endtime="20231214 11:05:36.435"/>
 </kw>
 <kw name="Click Element" library="AppiumLibrary">
 <arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/b.k.a.a/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ListView/android.widget.LinearLayout[4]/android.widget.TextView</arg>
 <doc>Click element identified by `locator`.</doc>
-<msg timestamp="20231214 10:59:24.716" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/b.k.a.a/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ListView/android.widget.LinearLayout[4]/android.widget.TextView'.</msg>
-<msg timestamp="20231214 10:59:26.724" level="INFO">xpath criteria: /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/b.k.a.a/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ListView/android.widget.LinearLayout[4]/android.widget.TextView</msg>
-<status status="PASS" starttime="20231214 10:59:24.715" endtime="20231214 10:59:26.724"/>
+<msg timestamp="20231214 11:05:36.436" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/b.k.a.a/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ListView/android.widget.LinearLayout[4]/android.widget.TextView'.</msg>
+<msg timestamp="20231214 11:05:39.385" level="INFO">xpath criteria: /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/b.k.a.a/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ListView/android.widget.LinearLayout[4]/android.widget.TextView</msg>
+<status status="PASS" starttime="20231214 11:05:36.435" endtime="20231214 11:05:39.385"/>
 </kw>
 <kw name="Element Text Should Be" library="AppiumLibrary">
 <arg>id=com.socialnmobile.dictapps.notepad.color.note:id/title</arg>
 <arg>Naruto Dragon Ball Attack on titan</arg>
 <doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
-<msg timestamp="20231214 10:59:26.726" level="INFO">Verifying element 'id=com.socialnmobile.dictapps.notepad.color.note:id/title' contains exactly text 'Naruto Dragon Ball Attack on titan'.</msg>
-<msg timestamp="20231214 10:59:27.502" level="INFO">criteria is com.socialnmobile.dictapps.notepad.color.note:id/title</msg>
-<status status="PASS" starttime="20231214 10:59:26.725" endtime="20231214 10:59:27.502"/>
+<msg timestamp="20231214 11:05:39.387" level="INFO">Verifying element 'id=com.socialnmobile.dictapps.notepad.color.note:id/title' contains exactly text 'Naruto Dragon Ball Attack on titan'.</msg>
+<msg timestamp="20231214 11:05:41.060" level="INFO">criteria is com.socialnmobile.dictapps.notepad.color.note:id/title</msg>
+<status status="PASS" starttime="20231214 11:05:39.386" endtime="20231214 11:05:41.060"/>
 </kw>
-<status status="PASS" starttime="20231214 10:59:14.291" endtime="20231214 10:59:27.502"/>
+<status status="PASS" starttime="20231214 11:05:21.117" endtime="20231214 11:05:41.060"/>
 </test>
 <kw name="Close Application" library="AppiumLibrary" type="TEARDOWN">
 <doc>Closes the current application and also close webdriver session.</doc>
-<status status="PASS" starttime="20231214 10:59:27.503" endtime="20231214 10:59:27.993"/>
+<status status="PASS" starttime="20231214 11:05:41.061" endtime="20231214 11:05:41.583"/>
 </kw>
-<status status="PASS" starttime="20231214 10:58:39.089" endtime="20231214 10:59:27.993"/>
+<status status="PASS" starttime="20231214 11:04:32.169" endtime="20231214 11:05:41.583"/>
 </suite>
 <statistics>
 <total>
@@ -200,7 +200,7 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <tag>
 </tag>
 <suite>
-<stat pass="2" fail="0" skip="0" id="s1" name="Color-Note-s21">Color-Note-s21</stat>
+<stat pass="2" fail="0" skip="0" id="s1" name="Color-Note-note8">Color-Note-note8</stat>
 </suite>
 </statistics>
 <errors>
