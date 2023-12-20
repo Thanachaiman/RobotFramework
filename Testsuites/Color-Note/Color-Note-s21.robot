@@ -32,7 +32,8 @@ Scenario : Add Note
     And System displays text in note as "${anime_name_note}"
 
 Scenario : Delete Note
-    When Click menu ... btn
+    When Click Skip Button For Delete Action
+    And Click menu ... btn
     And Click delete button
     And Click ok button in delete modal
     And Click hamburger icon
