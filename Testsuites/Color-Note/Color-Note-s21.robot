@@ -18,6 +18,7 @@ Suite Teardown      close application
 
 *** Variables ***
 ${anime_name_note}      Naruto Dragon Ball Attack on titan
+${anime_name_note_2}    Naruto Dragon Ball Attack on titan 2
 
 
 *** Test Cases ***
@@ -34,9 +35,14 @@ Scenario : Add Note
 
 Scenario : Delete Note
     When Click Skip Button For Delete Action
+    And Click add text button
+    And Click text note area
+    And Enter "${anime_name_note_2}" note
+    And Go Back
+    And Go Back
     And Click menu ... btn
     And Click delete button
     And Click ok button in delete modal
     And Click hamburger icon
     And Click trash can button
-    Then trash can page displays text in note as "${anime_name_note}"
+    Then trash can page displays text in note as "${anime_name_note_2}"

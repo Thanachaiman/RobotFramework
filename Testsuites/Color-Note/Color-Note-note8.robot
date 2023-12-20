@@ -18,7 +18,7 @@ Suite Teardown      close application
 
 *** Variables ***
 ${anime_name_note}      Naruto Dragon Ball Attack on titan
-${anime_name_note_2}    Naruto Dragon Ball Attack on titan
+${anime_name_note_2}    Naruto Dragon Ball Attack on titan 2
 
 
 *** Test Cases ***
