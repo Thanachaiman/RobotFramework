@@ -24,6 +24,7 @@ Register User
     Select checkbox 'Receive special offers from our partners!
     Fill details: First name, Last name, Company, Address, Address2, Country, State, City, Zipcode, Mobile Number
     Click 'Create Account button
+    Click 'Continue' button
     Verify that 'Logged in as username' is visible
 
 # API 12: DELETE METHOD To Delete User Account

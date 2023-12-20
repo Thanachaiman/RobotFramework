@@ -88,4 +88,6 @@ Click 'Continue' button
     Click Element    ${btn_conntinue}
 
 Verify that 'Logged in as username' is visible
-    Wait Until Page Contains    ${sign_up_page_user_data}[username]    ${default_timeout}
+    Element Text Should Be
+    ...    xpath://*[@id="header"]/div/div/div/div[2]/div/ul/li[10]
+    ...    Logged in as ${sign_up_page_user_data}[username]
