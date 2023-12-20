@@ -30,6 +30,7 @@ Scenario : Add Note
     And Go Back
     Then System displays note title as "${anime_name_note}"
     And System displays text in note as "${anime_name_note}"
+    And Go Back
 
 Scenario : Delete Note
     When Click Skip Button For Delete Action

@@ -31,14 +31,16 @@ Scenario : Add Note
     And Go Back
     Then System displays note title as "${anime_name_note}"
     And System displays text in note as "${anime_name_note}"
+    And Go Back
 
 Scenario : Delete Note
+    When Click Skip Button For Delete Action
     And Click add text button
     And Click text note area
     And Enter "${anime_name_note_2}" note
     And Go Back
     And Go Back
-    When Click menu ... btn
+    And Click menu ... btn
     And Click delete button
     And Click ok button in delete modal
     And Click hamburger icon
