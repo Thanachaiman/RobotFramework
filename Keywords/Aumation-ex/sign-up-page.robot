@@ -43,6 +43,8 @@ ${check_box_Sign_up_for_our_newsletter!}                    xpath://*[@id="newsl
 ${check_box_Receive_special_offers_from_our_partners!}      xpath://*[@id="optin"]
 ${btn_create_account}                                       xpath://*[@id="form"]/div/div/div/div/form/button
 
+${url}                                                      https://automationexercise.com
+
 
 *** Keywords ***
 Verify 'ENTER ACCOUNT INFORMATION' is visible
@@ -112,4 +114,5 @@ Register USING API
     ...    state=${sign_up_page_user_data}[state]
     ...    city=${sign_up_page_user_data}[city]
     ...    mobile_number=${sign_up_page_user_data}[mobile_number]
-    ${response}=    Post on session    placeholder    /    json=${body}
+    ${response}=    Post on session    placeholder    /api/createAccount    json=${body}
+    Should Be Equal As Numbers    ${response.status_code}    200

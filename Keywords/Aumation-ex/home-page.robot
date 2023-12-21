@@ -5,7 +5,6 @@ ${img_automation_exercise}      xpath://*[@id="header"]/div/div/div/div[1]/div/a
 ${btn_delete_account}           xpath://*[@id="header"]/div/div/div/div[2]/div/ul/li[5]/a
 ${btn_signup_login}             xpath://*[@id="header"]/div/div/div/div[2]/div/ul/li[4]/a
 ${txt_account_delete}           xpaht://*[@id="form"]/div/div/div/h2/b
-${url}                          https://automationexercise.com/api/createAccount
 
 
 *** Keywords ***

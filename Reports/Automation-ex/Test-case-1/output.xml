@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.3 on win32)" generated="20231221 09:06:07.526" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.11.3 on win32)" generated="20231221 09:16:43.268" rpa="false" schemaversion="4">
 <suite id="s1" name="Test-Case-2-Login-User" source="D:\Robot_framework\Testsuites\Automation-ex\Test-Case-2-Login-User.robot">
 <kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
 <arg>url=http://automationexercise.com</arg>
 <arg>browser=chrome</arg>
 <arg>options=add_argument("--headless")</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231221 09:06:07.819" level="INFO">Opening browser 'chrome' to base url 'http://automationexercise.com'.</msg>
-<status status="PASS" starttime="20231221 09:06:07.819" endtime="20231221 09:06:10.511"/>
+<msg timestamp="20231221 09:16:43.534" level="INFO">Opening browser 'chrome' to base url 'http://automationexercise.com'.</msg>
+<status status="PASS" starttime="20231221 09:16:43.534" endtime="20231221 09:16:49.525"/>
 </kw>
 <test id="s1-t1" name="Register User" line="14">
 <kw name="Register USING API" library="sign-up-page">
@@ -15,8 +15,8 @@
 <arg>placeholder</arg>
 <arg>${url}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20231221 09:06:10.513" level="INFO">Creating Session using : alias=placeholder, url=https://automationexercise.com/api/createAccount, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20231221 09:06:10.513" endtime="20231221 09:06:10.513"/>
+<msg timestamp="20231221 09:16:49.526" level="INFO">Creating Session using : alias=placeholder, url=https://automationexercise.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20231221 09:16:49.526" endtime="20231221 09:16:49.526"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>&amp;{body}</var>
@@ -38,347 +38,57 @@
 <arg>city=${sign_up_page_user_data}[city]</arg>
 <arg>mobile_number=${sign_up_page_user_data}[mobile_number]</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20231221 09:06:10.515" level="INFO">&amp;{body} = { name=thanachai | email=tang@gmail.comtangkung | password=password | title=Mr | birth_date=1 | birth_month=1 | birth_year=2001 | firstname=firstname | lastname=lastname | company=company | address1=a...</msg>
-<status status="PASS" starttime="20231221 09:06:10.513" endtime="20231221 09:06:10.515"/>
+<msg timestamp="20231221 09:16:49.527" level="INFO">&amp;{body} = { name=thanachai | email=tang@gmail.comtangkung | password=password | title=Mr | birth_date=1 | birth_month=1 | birth_year=2001 | firstname=firstname | lastname=lastname | company=company | address1=a...</msg>
+<status status="PASS" starttime="20231221 09:16:49.526" endtime="20231221 09:16:49.527"/>
 </kw>
 <kw name="POST On Session" library="RequestsLibrary">
 <var>${response}</var>
 <arg>placeholder</arg>
-<arg>/</arg>
+<arg>/api/createAccount</arg>
 <arg>json=${body}</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20231221 09:06:11.471" level="INFO">POST Request : url=https://automationexercise.com/api/createAccount/ 
- path_url=/api/createAccount/ 
+<msg timestamp="20231221 09:16:50.435" level="INFO">POST Request : url=https://automationexercise.com/api/createAccount 
+ path_url=/api/createAccount 
  headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '381', 'Content-Type': 'application/json'} 
  body=b'{"name": "thanachai", "email": "tang@gmail.comtangkung", "password": "password", "title": "Mr", "birth_date": "1", "birth_month": "1", "birth_year": "2001", "firstname": "firstname", "lastname": "lastname", "company": "company", "address1": "address", "address2": "address2", "country": "Canada", "zipcode": "10000", "state": "state", "city": "city", "mobile_number": "0829269788"}' 
  </msg>
-<msg timestamp="20231221 09:06:11.472" level="INFO">POST Response : url=https://automationexercise.com/api/createAccount/ 
- status=404, reason=Not Found 
- headers={'Date': 'Thu, 21 Dec 2023 02:06:11 GMT', 'Content-Type': 'text/html', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'referrer-policy': 'same-origin', 'x-frame-options': 'DENY', 'x-content-type-options': 'nosniff', 'x-powered-by': 'Phusion Passenger 6.0.7', 'status': '404 Not Found', 'vary': 'Accept-Encoding', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=twRGA3KbMaxKUqvXjTMBvIa%2Fdg5TrpjCGStFIbkt9xkvNEM208Opt3JqNInelzC2CcEm%2Fb968wEkN0QnRxhHhYsOmUlOW%2BTPzr1y3HeWSSAo5Q1OeLKOY9rubn5oTLc5Igh%2BDw4usKVb"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '838c907539e344b4-SIN', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
- body=&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;meta http-equiv="content-type" content="text/html; charset=utf-8"&gt;
-  &lt;title&gt;Page not found at /api/createAccount/&lt;/title&gt;
-  &lt;meta name="robots" content="NONE,NOARCHIVE"&gt;
-  &lt;style type="text/css"&gt;
-    html * { padding:0; margin:0; }
-    body * { padding:10px 20px; }
-    body * * { padding:0; }
-    body { font:small sans-serif; background:#eee; color:#000; }
-    body&gt;div { border-bottom:1px solid #ddd; }
-    h1 { font-weight:normal; margin-bottom:.4em; }
-    h1 span { font-size:60%; color:#666; font-weight:normal; }
-    table { border:none; border-collapse: collapse; width:100%; }
-    td, th { vertical-align:top; padding:2px 3px; }
-    th { width:12em; text-align:right; color:#666; padding-right:.5em; }
-    #info { background:#f6f6f6; }
-    #info ol { margin: 0.5em 4em; }
-    #info ol li { font-family: monospace; }
-    #summary { background: #ffc; }
-    #explanation { background:#eee; border-bottom: 0px none; }
-    pre.exception_value { font-family: sans-serif; color: #575757; font-size: 1.5em; margin: 10px 0 10px 0; }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;div id="summary"&gt;
-    &lt;h1&gt;Page not found &lt;span&gt;(404)&lt;/span&gt;&lt;/h1&gt;
-    
-    &lt;table class="meta"&gt;
-      &lt;tr&gt;
-        &lt;th&gt;Request Method:&lt;/th&gt;
-        &lt;td&gt;POST&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;th&gt;Request URL:&lt;/th&gt;
-        &lt;td&gt;https://automationexercise.com/api/createAccount/&lt;/td&gt;
-      &lt;/tr&gt;
-      
-    &lt;/table&gt;
-  &lt;/div&gt;
-  &lt;div id="info"&gt;
-    
-      &lt;p&gt;
-      Using the URLconf defined in &lt;code&gt;automation_exercise.urls&lt;/code&gt;,
-      Django tried these URL patterns, in this order:
-      &lt;/p&gt;
-      &lt;ol&gt;
-        
-          &lt;li&gt;
-            
-                admin/
-                
-            
-          &lt;/li&gt;
-        
-          &lt;li&gt;
-            
-                
-                
-            
-          &lt;/li&gt;
-        
-          &lt;li&gt;
-            
-                get_product_picture/&amp;lt;int:product_id&amp;gt;
-                
-            
-          &lt;/li&gt;
-        
-          &lt;li&gt;
-            
-                product_details/&amp;lt;int:product_id&amp;gt;
-                
-            
-          &lt;/li&gt;
-        
-          &lt;li&gt;
-            
-                products
-                
-            
-          &lt;/li&gt;
-        
-          &lt;li&gt;
-            
-                contact_us
-                
-            
-          &lt;/li&gt;
-        
-          &lt;li&gt;
-            
-                add_to_cart/&amp;lt;int:product_id&amp;gt;
-                
-            
-          &lt;/li&gt;
-        
-          &lt;li&gt;
-            
-                view_cart
-                
-            
-          &lt;/li&gt;
-        
-          &lt;li&gt;
-            
-                delete_cart/&amp;lt;int:product_id&amp;gt;
-                
-            
-          &lt;/li&gt;
-        
-          &lt;li&gt;
-            
-                login
-                
-            
-          &lt;/li&gt;
-        
-          &lt;li&gt;
-            
-                signup
-                
-            
-          &lt;/li&gt;
-        
-          &lt;li&gt;
-            
-                account_created
-                
-            
-          &lt;/li&gt;
-        
-          &lt;li&gt;
-            
-                logout
-                
-            
-          &lt;/li&gt;
-        
-          &lt;li&gt;
-            
-                checkout
-                
-            
-          &lt;/li&gt;
-        
-          &lt;li&gt;
-            
-                payment
-                
-            
-          &lt;/li&gt;
-        
-          &lt;li&gt;
-            
-                delete_account
-                
-            
-          &lt;/li&gt;
-        
-          &lt;li&gt;
-            
-                brand_products/&amp;lt;str:brand&amp;gt;
-                
-            
-          &lt;/li&gt;
-        
-          &lt;li&gt;
-            
-                category_products/&amp;lt;int:category_id&amp;gt;
-                
-            
-          &lt;/li&gt;
-        
-          &lt;li&gt;
-            
-                test_cases
-                
-            
-          &lt;/li&gt;
-        
-          &lt;li&gt;
-            
-                api_list
-                
-            
-          &lt;/li&gt;
-        
-          &lt;li&gt;
-            
-                download_invoice/&amp;lt;int:overall_amount&amp;gt;
-                
-            
-          &lt;/li&gt;
-        
-          &lt;li&gt;
-            
-                payment_done/&amp;lt;int:overall_amount&amp;gt;
-                
-            
-          &lt;/li&gt;
-        
-          &lt;li&gt;
-            
-                video_tutorials
-                
-            
-          &lt;/li&gt;
-        
-          &lt;li&gt;
-            
-                api/productsList
-                
-            
-          &lt;/li&gt;
-        
-          &lt;li&gt;
-            
-                api/brandsList
-                
-            
-          &lt;/li&gt;
-        
-          &lt;li&gt;
-            
-                api/searchProduct
-                
-            
-          &lt;/li&gt;
-        
-          &lt;li&gt;
-            
-                api/verifyLogin
-                
-            
-          &lt;/li&gt;
-        
-          &lt;li&gt;
-            
-                api/createAccount
-                
-            
-          &lt;/li&gt;
-        
-          &lt;li&gt;
-            
-                api/deleteAccount
-                
-            
-          &lt;/li&gt;
-        
-          &lt;li&gt;
-            
-                api/updateAccount
-                
-            
-          &lt;/li&gt;
-        
-          &lt;li&gt;
-            
-                api/getUserDetailByEmail
-                
-            
-          &lt;/li&gt;
-        
-          &lt;li&gt;
-            
-                &amp;lt;str:random_string&amp;gt;
-                
-            
-          &lt;/li&gt;
-        
-          &lt;li&gt;
-            
-                ^static/(?P&amp;lt;path&amp;gt;.*)$
-                
-            
-          &lt;/li&gt;
-        
-      &lt;/ol&gt;
-      &lt;p&gt;
-        
-          The current path, &lt;code&gt;api/createAccount/&lt;/code&gt;,
-        
-        didnât match any of these.
-      &lt;/p&gt;
-    
-  &lt;/div&gt;
-
-  &lt;div id="explanation"&gt;
-    &lt;p&gt;
-      Youâre seeing this error because you have &lt;code&gt;DEBUG = True&lt;/code&gt; in
-      your Django settings file. Change that to &lt;code&gt;False&lt;/code&gt;, and Django
-      will display a standard 404 page.
-    &lt;/p&gt;
-  &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
- 
+<msg timestamp="20231221 09:16:50.435" level="INFO">POST Response : url=https://automationexercise.com/api/createAccount 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 21 Dec 2023 02:16:50 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'vary': 'Accept,Cookie,Accept-Encoding', 'referrer-policy': 'same-origin', 'x-frame-options': 'DENY', 'x-content-type-options': 'nosniff', 'allow': 'OPTIONS, POST', 'x-powered-by': 'Phusion Passenger 6.0.7', 'status': '200 OK', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=elHve%2BCwaWKuUwj%2B00Iv8ML7K3S4rU0ukdCrfHV%2FrGPpLUVxwilOGX9qMEz0TmviyJOUbaXQuNrE4KjuXnBDHfJpUoS89FV9DWLhBIQ6gPWZlYbLhQKamoZ8NEBJlQR6J5iuRJfmSKXF"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '838ca00ed9903fc5-SIN', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"responseCode": 400, "message": "Bad request, name parameter is missing in POST request."} 
  </msg>
-<msg timestamp="20231221 09:06:11.472" level="INFO">C:\Users\thanachai\Lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'automationexercise.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg timestamp="20231221 09:16:50.436" level="INFO">C:\Users\thanachai\Lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'automationexercise.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg timestamp="20231221 09:06:11.472" level="FAIL">HTTPError: 404 Client Error: Not Found for url: https://automationexercise.com/api/createAccount/</msg>
-<status status="FAIL" starttime="20231221 09:06:10.515" endtime="20231221 09:06:11.473"/>
+<msg timestamp="20231221 09:16:50.436" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231221 09:16:49.527" endtime="20231221 09:16:50.436"/>
 </kw>
-<status status="FAIL" starttime="20231221 09:06:10.512" endtime="20231221 09:06:11.474"/>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<msg timestamp="20231221 09:16:50.437" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20231221 09:16:50.436" endtime="20231221 09:16:50.437"/>
 </kw>
-<status status="FAIL" starttime="20231221 09:06:10.511" endtime="20231221 09:06:11.474">HTTPError: 404 Client Error: Not Found for url: https://automationexercise.com/api/createAccount/</status>
+<status status="PASS" starttime="20231221 09:16:49.525" endtime="20231221 09:16:50.437"/>
+</kw>
+<status status="PASS" starttime="20231221 09:16:49.525" endtime="20231221 09:16:50.437"/>
 </test>
 <kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20231221 09:06:11.476" endtime="20231221 09:06:13.523"/>
+<status status="PASS" starttime="20231221 09:16:50.438" endtime="20231221 09:16:52.488"/>
 </kw>
-<status status="FAIL" starttime="20231221 09:06:07.528" endtime="20231221 09:06:13.523"/>
+<status status="PASS" starttime="20231221 09:16:43.270" endtime="20231221 09:16:52.488"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Test-Case-2-Login-User">Test-Case-2-Login-User</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test-Case-2-Login-User">Test-Case-2-Login-User</stat>
 </suite>
 </statistics>
 <errors>
