@@ -96,8 +96,7 @@ Verify that 'Logged in as username' is visible
 
 Register USING API
     Create Session    placeholder    ${url}
-    &{body}=    Create dictionary
-    ...    name=${sign_up_page_user_data}[username]
+    &{params}=    Create dictionary    name=${sign_up_page_user_data}[username]
     ...    email=tang@gmail.comtangkung
     ...    password=${sign_up_page_user_data}[password]
     ...    title=Mr
@@ -114,5 +113,6 @@ Register USING API
     ...    state=${sign_up_page_user_data}[state]
     ...    city=${sign_up_page_user_data}[city]
     ...    mobile_number=${sign_up_page_user_data}[mobile_number]
-    ${response}=    Post on session    placeholder    /api/createAccount    json=${body}
-    Should Be Equal As Numbers    ${response.status_code}    200
+    ${response}=    Post on session    placeholder    /api/createAccount    data=${params}
+    should be equal    ${response.status_code}    ${200}
+    Log many    ${response}

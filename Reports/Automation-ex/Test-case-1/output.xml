@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.3 on win32)" generated="20231221 09:24:54.734" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.11.3 on win32)" generated="20231221 09:47:08.362" rpa="false" schemaversion="4">
 <suite id="s1" name="Test-Case-2-Login-User" source="D:\Robot_framework\Testsuites\Automation-ex\Test-Case-2-Login-User.robot">
 <kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
 <arg>url=http://automationexercise.com</arg>
 <arg>browser=chrome</arg>
 <arg>options=add_argument("--headless")</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231221 09:24:55.025" level="INFO">Opening browser 'chrome' to base url 'http://automationexercise.com'.</msg>
-<status status="PASS" starttime="20231221 09:24:55.024" endtime="20231221 09:25:02.752"/>
+<msg timestamp="20231221 09:47:08.673" level="INFO">Opening browser 'chrome' to base url 'http://automationexercise.com'.</msg>
+<status status="PASS" starttime="20231221 09:47:08.673" endtime="20231221 09:47:14.077"/>
 </kw>
 <test id="s1-t1" name="Register User" line="14">
 <kw name="Register USING API" library="sign-up-page">
@@ -15,11 +15,11 @@
 <arg>placeholder</arg>
 <arg>${url}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20231221 09:25:02.754" level="INFO">Creating Session using : alias=placeholder, url=https://automationexercise.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20231221 09:25:02.754" endtime="20231221 09:25:02.754"/>
+<msg timestamp="20231221 09:47:14.078" level="INFO">Creating Session using : alias=placeholder, url=https://automationexercise.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20231221 09:47:14.078" endtime="20231221 09:47:14.078"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
-<var>&amp;{body}</var>
+<var>&amp;{params}</var>
 <arg>name=${sign_up_page_user_data}[username]</arg>
 <arg>email=tang@gmail.comtangkung</arg>
 <arg>password=${sign_up_page_user_data}[password]</arg>
@@ -38,48 +38,51 @@
 <arg>city=${sign_up_page_user_data}[city]</arg>
 <arg>mobile_number=${sign_up_page_user_data}[mobile_number]</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20231221 09:25:02.755" level="INFO">&amp;{body} = { name=thanachai | email=tang@gmail.comtangkung | password=password | title=Mr | birth_date=1 | birth_month=1 | birth_year=2001 | firstname=firstname | lastname=lastname | company=company | address1=a...</msg>
-<status status="PASS" starttime="20231221 09:25:02.754" endtime="20231221 09:25:02.755"/>
+<msg timestamp="20231221 09:47:14.080" level="INFO">&amp;{params} = { name=thanachai | email=tang@gmail.comtangkung | password=password | title=Mr | birth_date=1 | birth_month=1 | birth_year=2001 | firstname=firstname | lastname=lastname | company=company | address1=a...</msg>
+<status status="PASS" starttime="20231221 09:47:14.078" endtime="20231221 09:47:14.080"/>
 </kw>
 <kw name="POST On Session" library="RequestsLibrary">
 <var>${response}</var>
 <arg>placeholder</arg>
 <arg>/api/createAccount</arg>
-<arg>json=${body}</arg>
+<arg>data=${params}</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20231221 09:25:03.900" level="INFO">POST Request : url=https://automationexercise.com/api/createAccount 
+<msg timestamp="20231221 09:47:15.011" level="INFO">POST Request : url=https://automationexercise.com/api/createAccount 
  path_url=/api/createAccount 
- headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '381', 'Content-Type': 'application/json'} 
- body=b'{"name": "thanachai", "email": "tang@gmail.comtangkung", "password": "password", "title": "Mr", "birth_date": "1", "birth_month": "1", "birth_year": "2001", "firstname": "firstname", "lastname": "lastname", "company": "company", "address1": "address", "address2": "address2", "country": "Canada", "zipcode": "10000", "state": "state", "city": "city", "mobile_number": "0829269788"}' 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '280', 'Content-Type': 'application/x-www-form-urlencoded'} 
+ body=name=thanachai&amp;email=tang%40gmail.comtangkung&amp;password=password&amp;title=Mr&amp;birth_date=1&amp;birth_month=1&amp;birth_year=2001&amp;firstname=firstname&amp;lastname=lastname&amp;company=company&amp;address1=address&amp;address2=address2&amp;country=Canada&amp;zipcode=10000&amp;state=state&amp;city=city&amp;mobile_number=0829269788 
  </msg>
-<msg timestamp="20231221 09:25:03.900" level="INFO">POST Response : url=https://automationexercise.com/api/createAccount 
+<msg timestamp="20231221 09:47:15.012" level="INFO">POST Response : url=https://automationexercise.com/api/createAccount 
  status=200, reason=OK 
- headers={'Date': 'Thu, 21 Dec 2023 02:25:03 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'vary': 'Accept,Cookie,Accept-Encoding', 'referrer-policy': 'same-origin', 'x-frame-options': 'DENY', 'x-content-type-options': 'nosniff', 'allow': 'OPTIONS, POST', 'x-powered-by': 'Phusion Passenger 6.0.7', 'status': '200 OK', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=9An%2FeqJcc8bbBsVvmFZpBL2sj%2BHGoRGBhQDCLwWcdVCqormGxuhZAaYM4P2976vfa00HotieRA1Yyys8zQFqC7vYdZIYlG%2BPfcNpwaUSZ2uV7%2FlnuuBztO%2BBf%2FnyZgandipRIA%2BCbZSV"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '838cac193fe545c5-BKK', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
- body={"responseCode": 400, "message": "Bad request, name parameter is missing in POST request."} 
+ headers={'Date': 'Thu, 21 Dec 2023 02:47:15 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'vary': 'Accept,Cookie,Accept-Encoding', 'referrer-policy': 'same-origin', 'x-frame-options': 'DENY', 'x-content-type-options': 'nosniff', 'allow': 'OPTIONS, POST', 'x-powered-by': 'Phusion Passenger 6.0.7', 'status': '200 OK', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=3YuttL5RwijzfZZ%2BUjva9XTDbvAT0PR7t95psGfV9Cf76a2mPS%2FYrr6SIhJrQBptNZYAb5itQWylSxoBO9Cx9%2Btn0Y3KK8%2BmHjQONefxX7EivrTyOhIwrVWf8peeWIEg0oUY3C8Ytuyo"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '838ccc9a88aca08d-SIN', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"responseCode": 201, "message": "User created!"} 
  </msg>
-<msg timestamp="20231221 09:25:03.900" level="INFO">C:\Users\thanachai\Lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'automationexercise.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg timestamp="20231221 09:47:15.012" level="INFO">C:\Users\thanachai\Lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'automationexercise.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg timestamp="20231221 09:25:03.900" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20231221 09:25:02.755" endtime="20231221 09:25:03.900"/>
+<msg timestamp="20231221 09:47:15.012" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231221 09:47:14.080" endtime="20231221 09:47:15.012"/>
 </kw>
-<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<kw name="Should Be Equal" library="BuiltIn">
 <arg>${response.status_code}</arg>
-<arg>200</arg>
-<doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<msg timestamp="20231221 09:25:03.901" level="INFO">Argument types are:
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;</msg>
-<status status="PASS" starttime="20231221 09:25:03.901" endtime="20231221 09:25:03.901"/>
+<arg>${200}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20231221 09:47:15.012" endtime="20231221 09:47:15.014"/>
 </kw>
-<status status="PASS" starttime="20231221 09:25:02.753" endtime="20231221 09:25:03.901"/>
+<kw name="Log Many" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<msg timestamp="20231221 09:47:15.014" level="INFO">&lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231221 09:47:15.014" endtime="20231221 09:47:15.014"/>
 </kw>
-<status status="PASS" starttime="20231221 09:25:02.752" endtime="20231221 09:25:03.901"/>
+<status status="PASS" starttime="20231221 09:47:14.078" endtime="20231221 09:47:15.014"/>
+</kw>
+<status status="PASS" starttime="20231221 09:47:14.077" endtime="20231221 09:47:15.014"/>
 </test>
 <kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20231221 09:25:03.902" endtime="20231221 09:25:05.949"/>
+<status status="PASS" starttime="20231221 09:47:15.014" endtime="20231221 09:47:17.067"/>
 </kw>
-<status status="PASS" starttime="20231221 09:24:54.736" endtime="20231221 09:25:05.949"/>
+<status status="PASS" starttime="20231221 09:47:08.364" endtime="20231221 09:47:17.067"/>
 </suite>
 <statistics>
 <total>
