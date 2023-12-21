@@ -1,5 +1,5 @@
 *** Variables ***
-${default_timeout}              5000ms
+${default_timeout}              5s
 ${page_title}                   Automation Exercise
 ${img_automation_exercise}      xpath://*[@id="header"]/div/div/div/div[1]/div/a/img
 ${btn_delete_account}           xpath://*[@id="header"]/div/div/div/div[2]/div/ul/li[5]/a

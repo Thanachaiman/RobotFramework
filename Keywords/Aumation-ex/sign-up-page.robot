@@ -15,22 +15,6 @@
 ...                                                         drop_down_year=xpath://*[@id="years"]
 ...                                                         drop_down_country=xpath://*[@id="country"]
 
-&{sign_up_page_user_data}                                   username=thanachai
-...                                                         password=password
-...                                                         first_name=firstname
-...                                                         last_name=lastname
-...                                                         company=company
-...                                                         address1=address
-...                                                         address2=address2
-...                                                         state=state
-...                                                         city=city
-...                                                         zipcode=10000
-...                                                         mobile_number=0829269788
-...                                                         date=1
-...                                                         month=1
-...                                                         year=2001
-...                                                         country=Canada
-
 ${default_timeout}                                          5000ms
 ${title_sign_up_page}                                       xpath://*[@id="form"]/div/div/div/div/h2/b
 ${radio_btn_title}                                          xpath://*[@id="id_gender1"]
@@ -51,14 +35,14 @@ Verify 'ENTER ACCOUNT INFORMATION' is visible
     Wait Until Element Is Visible    ${title_sign_up_page}    timeout=${default_timeout}
     Element Text Should Be    ${title_sign_up_page}    ENTER ACCOUNT INFORMATION
 
-Fill details: Title, Name, Email, Password, Date of birth
-    Click Element    ${radio_btn_title}
+Fill details data with: ${title}, ${name}, ${password}, ${date}, ${month}, ${year}
+    Click Element    ${title}
     Clear Element Text    ${sign_up_page_user_data_path}[username]
-    Input Text    ${sign_up_page_user_data_path}[username]    ${sign_up_page_user_data}[username]
-    Input Text    ${sign_up_page_user_data_path}[password]    ${sign_up_page_user_data}[password]
-    Select From List by Value    ${sign_up_page_user_data_path}[drop_down_date]    ${sign_up_page_user_data}[date]
-    Select From List by Value    ${sign_up_page_user_data_path}[drop_down_month]    ${sign_up_page_user_data}[month]
-    Select From List by Value    ${sign_up_page_user_data_path}[drop_down_year]    ${sign_up_page_user_data}[year]
+    Input Text    ${sign_up_page_user_data_path}[username]    ${name}
+    Input Text    ${sign_up_page_user_data_path}[password]    ${password}
+    Select From List by Value    ${sign_up_page_user_data_path}[drop_down_date]    ${date}
+    Select From List by Value    ${sign_up_page_user_data_path}[drop_down_month]    ${month}
+    Select From List by Value    ${sign_up_page_user_data_path}[drop_down_year]    ${year}
 
 Select checkbox 'Sign up for our newsletter!
     Click Element    ${check_box_Sign_up_for_our_newsletter!}
@@ -66,19 +50,19 @@ Select checkbox 'Sign up for our newsletter!
 Select checkbox 'Receive special offers from our partners!
     Click Element    ${check_box_Receive_special_offers_from_our_partners!}
 
-Fill details: First name, Last name, Company, Address, Address2, Country, State, City, Zipcode, Mobile Number
-    Input Text    ${sign_up_page_user_data_path}[first_name]    ${sign_up_page_user_data}[first_name]
-    Input Text    ${sign_up_page_user_data_path}[last_name]    ${sign_up_page_user_data}[last_name]
-    Input Text    ${sign_up_page_user_data_path}[company]    ${sign_up_page_user_data}[company]
-    Input Text    ${sign_up_page_user_data_path}[address1]    ${sign_up_page_user_data}[address1]
-    Input Text    ${sign_up_page_user_data_path}[address2]    ${sign_up_page_user_data}[address2]
-    Input Text    ${sign_up_page_user_data_path}[state]    ${sign_up_page_user_data}[state]
-    Input Text    ${sign_up_page_user_data_path}[city]    ${sign_up_page_user_data}[city]
-    Input Text    ${sign_up_page_user_data_path}[zibcode]    ${sign_up_page_user_data}[zipcode]
-    Input Text    ${sign_up_page_user_data_path}[mobile_number]    ${sign_up_page_user_data}[mobile_number]
+Fill details address with: ${first_name}, ${last_name}, ${company}, ${address1}, ${address2}, ${country}, ${state}, ${city}, ${zipcode}, ${mobile_number}
+    Input Text    ${sign_up_page_user_data_path}[first_name]    ${first_name}
+    Input Text    ${sign_up_page_user_data_path}[last_name]    ${last_name}
+    Input Text    ${sign_up_page_user_data_path}[company]    ${company}
+    Input Text    ${sign_up_page_user_data_path}[address1]    ${address1}
+    Input Text    ${sign_up_page_user_data_path}[address2]    ${address2}
+    Input Text    ${sign_up_page_user_data_path}[state]    ${state}
+    Input Text    ${sign_up_page_user_data_path}[city]    ${city}
+    Input Text    ${sign_up_page_user_data_path}[zibcode]    ${zipcode}
+    Input Text    ${sign_up_page_user_data_path}[mobile_number]    ${mobile_number}
     Select From List by Value
     ...    ${sign_up_page_user_data_path}[drop_down_country]
-    ...    ${sign_up_page_user_data}[country]
+    ...    ${country}
 
 Click 'Create Account button
     Click Element    ${btn_create_account}
@@ -89,30 +73,30 @@ Verify that 'ACCOUNT CREATED!' is visible
 Click 'Continue' button
     Click Element    ${btn_conntinue}
 
-Verify that 'Logged in as username' is visible
+Verify that 'Logged in as ${username}' is visible
     Element Text Should Be
     ...    ${txt_login_as_username}
-    ...    Logged in as ${sign_up_page_user_data}[username]
+    ...    Logged in as ${username}
 
-Register USING API
+Register USING API &{user_data}
     Create Session    placeholder    ${url}
-    &{params}=    Create dictionary    name=${sign_up_page_user_data}[username]
+    &{params}=    Create dictionary    name=${user_data}[username]
     ...    email=tang@gmail.comtangkung
-    ...    password=${sign_up_page_user_data}[password]
+    ...    password=${user_data}[password]
     ...    title=Mr
-    ...    birth_date=${sign_up_page_user_data}[date]
-    ...    birth_month=${sign_up_page_user_data}[month]
-    ...    birth_year=${sign_up_page_user_data}[year]
-    ...    firstname=${sign_up_page_user_data}[first_name]
-    ...    lastname=${sign_up_page_user_data}[last_name]
-    ...    company=${sign_up_page_user_data}[company]
-    ...    address1=${sign_up_page_user_data}[address1]
-    ...    address2=${sign_up_page_user_data}[address2]
-    ...    country=${sign_up_page_user_data}[country]
-    ...    zipcode=${sign_up_page_user_data}[zipcode]
-    ...    state=${sign_up_page_user_data}[state]
-    ...    city=${sign_up_page_user_data}[city]
-    ...    mobile_number=${sign_up_page_user_data}[mobile_number]
+    ...    birth_date=${user_data}[date]
+    ...    birth_month=${user_data}[month]
+    ...    birth_year=${user_data}[year]
+    ...    firstname=${user_data}[first_name]
+    ...    lastname=${user_data}[last_name]
+    ...    company=${user_data}[company]
+    ...    address1=${user_data}[address1]
+    ...    address2=${user_data}[address2]
+    ...    country=${user_data}[country]
+    ...    zipcode=${user_data}[zipcode]
+    ...    state=${user_data}[state]
+    ...    city=${user_data}[city]
+    ...    mobile_number=${user_data}[mobile_number]
     ${response}=    Post on session    placeholder    /api/createAccount    data=${params}
     should be equal    ${response.status_code}    ${200}
     Log many    ${response}
