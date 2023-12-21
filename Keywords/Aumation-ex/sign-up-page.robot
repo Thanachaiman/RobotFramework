@@ -36,7 +36,7 @@ ${title_sign_up_page}                                       xpath://*[@id="form"
 ${radio_btn_title}                                          xpath://*[@id="id_gender1"]
 ${account_created_title}                                    xpath://*[@id="form"]/div/div/div/h2/b
 ${btn_conntinue}                                            xpath://*[@id="form"]/div/div/div/div/a
-
+${txt_login_as_username}                                    xpath://*[@id="header"]/div/div/div/div[2]/div/ul/li[10]
 # ...
 
 ${check_box_Sign_up_for_our_newsletter!}                    xpath://*[@id="newsletter"]
@@ -89,5 +89,27 @@ Click 'Continue' button
 
 Verify that 'Logged in as username' is visible
     Element Text Should Be
-    ...    xpath://*[@id="header"]/div/div/div/div[2]/div/ul/li[10]
+    ...    ${txt_login_as_username}
     ...    Logged in as ${sign_up_page_user_data}[username]
+
+Register USING API
+    Create Session    placeholder    ${url}
+    &{body}=    Create dictionary
+    ...    name=${sign_up_page_user_data}[username]
+    ...    email=tang@gmail.comtangkung
+    ...    password=${sign_up_page_user_data}[password]
+    ...    title=Mr
+    ...    birth_date=${sign_up_page_user_data}[date]
+    ...    birth_month=${sign_up_page_user_data}[month]
+    ...    birth_year=${sign_up_page_user_data}[year]
+    ...    firstname=${sign_up_page_user_data}[first_name]
+    ...    lastname=${sign_up_page_user_data}[last_name]
+    ...    company=${sign_up_page_user_data}[company]
+    ...    address1=${sign_up_page_user_data}[address1]
+    ...    address2=${sign_up_page_user_data}[address2]
+    ...    country=${sign_up_page_user_data}[country]
+    ...    zipcode=${sign_up_page_user_data}[zipcode]
+    ...    state=${sign_up_page_user_data}[state]
+    ...    city=${sign_up_page_user_data}[city]
+    ...    mobile_number=${sign_up_page_user_data}[mobile_number]
+    ${response}=    Post on session    placeholder    /    json=${body}

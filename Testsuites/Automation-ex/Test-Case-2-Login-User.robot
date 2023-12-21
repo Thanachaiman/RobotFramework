@@ -12,9 +12,10 @@ Suite Teardown      Close Browser
 
 *** Test Cases ***
 Register User
-    Verify that home page is visible successfully
-    Click on 'Signup / Login' button
-    Verify 'New User Signup!' is visible
-    Enter correct email address and password
-    Click 'Delete Account' button
-    Verify that 'ACCOUNT DELETED!' is visible
+    Register USING API
+    # Verify that home page is visible successfully
+    # Click on 'Signup / Login' button
+    # Verify 'New User Signup!' is visible
+    # Enter correct email address and password
+    # Click 'Delete Account' button
+    # Verify that 'ACCOUNT DELETED!' is visible

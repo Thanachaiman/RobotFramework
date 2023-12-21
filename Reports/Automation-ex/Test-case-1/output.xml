@@ -1,325 +1,386 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.3 on win32)" generated="20231220 17:46:39.595" rpa="false" schemaversion="4">
-<suite id="s1" name="Test-Case-1-Register-User" source="D:\Robot_framework\Testsuites\Automation-ex\Test-Case-1-Register-User.robot">
+<robot generator="Robot 6.1.1 (Python 3.11.3 on win32)" generated="20231221 09:06:07.526" rpa="false" schemaversion="4">
+<suite id="s1" name="Test-Case-2-Login-User" source="D:\Robot_framework\Testsuites\Automation-ex\Test-Case-2-Login-User.robot">
 <kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
 <arg>url=http://automationexercise.com</arg>
 <arg>browser=chrome</arg>
 <arg>options=add_argument("--headless")</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231220 17:46:40.009" level="INFO">Opening browser 'chrome' to base url 'http://automationexercise.com'.</msg>
-<status status="PASS" starttime="20231220 17:46:40.008" endtime="20231220 17:46:46.238"/>
+<msg timestamp="20231221 09:06:07.819" level="INFO">Opening browser 'chrome' to base url 'http://automationexercise.com'.</msg>
+<status status="PASS" starttime="20231221 09:06:07.819" endtime="20231221 09:06:10.511"/>
 </kw>
 <test id="s1-t1" name="Register User" line="14">
-<kw name="Verify that home page is visible successfully" library="home-page">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>${page_title}</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20231220 17:46:46.243" level="INFO">Page title is 'Automation Exercise'.</msg>
-<status status="PASS" starttime="20231220 17:46:46.239" endtime="20231220 17:46:46.243"/>
+<kw name="Register USING API" library="sign-up-page">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>placeholder</arg>
+<arg>${url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20231221 09:06:10.513" level="INFO">Creating Session using : alias=placeholder, url=https://automationexercise.com/api/createAccount, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20231221 09:06:10.513" endtime="20231221 09:06:10.513"/>
 </kw>
-<kw name="Element Should Be Visible" library="SeleniumLibrary">
-<arg>${img_automation_exercise}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20231220 17:46:46.269" level="INFO">Element 'xpath://*[@id="header"]/div/div/div/div[1]/div/a/img' is displayed.</msg>
-<status status="PASS" starttime="20231220 17:46:46.243" endtime="20231220 17:46:46.269"/>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{body}</var>
+<arg>name=${sign_up_page_user_data}[username]</arg>
+<arg>email=tang@gmail.comtangkung</arg>
+<arg>password=${sign_up_page_user_data}[password]</arg>
+<arg>title=Mr</arg>
+<arg>birth_date=${sign_up_page_user_data}[date]</arg>
+<arg>birth_month=${sign_up_page_user_data}[month]</arg>
+<arg>birth_year=${sign_up_page_user_data}[year]</arg>
+<arg>firstname=${sign_up_page_user_data}[first_name]</arg>
+<arg>lastname=${sign_up_page_user_data}[last_name]</arg>
+<arg>company=${sign_up_page_user_data}[company]</arg>
+<arg>address1=${sign_up_page_user_data}[address1]</arg>
+<arg>address2=${sign_up_page_user_data}[address2]</arg>
+<arg>country=${sign_up_page_user_data}[country]</arg>
+<arg>zipcode=${sign_up_page_user_data}[zipcode]</arg>
+<arg>state=${sign_up_page_user_data}[state]</arg>
+<arg>city=${sign_up_page_user_data}[city]</arg>
+<arg>mobile_number=${sign_up_page_user_data}[mobile_number]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20231221 09:06:10.515" level="INFO">&amp;{body} = { name=thanachai | email=tang@gmail.comtangkung | password=password | title=Mr | birth_date=1 | birth_month=1 | birth_year=2001 | firstname=firstname | lastname=lastname | company=company | address1=a...</msg>
+<status status="PASS" starttime="20231221 09:06:10.513" endtime="20231221 09:06:10.515"/>
 </kw>
-<status status="PASS" starttime="20231220 17:46:46.238" endtime="20231220 17:46:46.269"/>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>placeholder</arg>
+<arg>/</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20231221 09:06:11.471" level="INFO">POST Request : url=https://automationexercise.com/api/createAccount/ 
+ path_url=/api/createAccount/ 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '381', 'Content-Type': 'application/json'} 
+ body=b'{"name": "thanachai", "email": "tang@gmail.comtangkung", "password": "password", "title": "Mr", "birth_date": "1", "birth_month": "1", "birth_year": "2001", "firstname": "firstname", "lastname": "lastname", "company": "company", "address1": "address", "address2": "address2", "country": "Canada", "zipcode": "10000", "state": "state", "city": "city", "mobile_number": "0829269788"}' 
+ </msg>
+<msg timestamp="20231221 09:06:11.472" level="INFO">POST Response : url=https://automationexercise.com/api/createAccount/ 
+ status=404, reason=Not Found 
+ headers={'Date': 'Thu, 21 Dec 2023 02:06:11 GMT', 'Content-Type': 'text/html', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'referrer-policy': 'same-origin', 'x-frame-options': 'DENY', 'x-content-type-options': 'nosniff', 'x-powered-by': 'Phusion Passenger 6.0.7', 'status': '404 Not Found', 'vary': 'Accept-Encoding', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=twRGA3KbMaxKUqvXjTMBvIa%2Fdg5TrpjCGStFIbkt9xkvNEM208Opt3JqNInelzC2CcEm%2Fb968wEkN0QnRxhHhYsOmUlOW%2BTPzr1y3HeWSSAo5Q1OeLKOY9rubn5oTLc5Igh%2BDw4usKVb"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '838c907539e344b4-SIN', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body=&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta http-equiv="content-type" content="text/html; charset=utf-8"&gt;
+  &lt;title&gt;Page not found at /api/createAccount/&lt;/title&gt;
+  &lt;meta name="robots" content="NONE,NOARCHIVE"&gt;
+  &lt;style type="text/css"&gt;
+    html * { padding:0; margin:0; }
+    body * { padding:10px 20px; }
+    body * * { padding:0; }
+    body { font:small sans-serif; background:#eee; color:#000; }
+    body&gt;div { border-bottom:1px solid #ddd; }
+    h1 { font-weight:normal; margin-bottom:.4em; }
+    h1 span { font-size:60%; color:#666; font-weight:normal; }
+    table { border:none; border-collapse: collapse; width:100%; }
+    td, th { vertical-align:top; padding:2px 3px; }
+    th { width:12em; text-align:right; color:#666; padding-right:.5em; }
+    #info { background:#f6f6f6; }
+    #info ol { margin: 0.5em 4em; }
+    #info ol li { font-family: monospace; }
+    #summary { background: #ffc; }
+    #explanation { background:#eee; border-bottom: 0px none; }
+    pre.exception_value { font-family: sans-serif; color: #575757; font-size: 1.5em; margin: 10px 0 10px 0; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id="summary"&gt;
+    &lt;h1&gt;Page not found &lt;span&gt;(404)&lt;/span&gt;&lt;/h1&gt;
+    
+    &lt;table class="meta"&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Request Method:&lt;/th&gt;
+        &lt;td&gt;POST&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Request URL:&lt;/th&gt;
+        &lt;td&gt;https://automationexercise.com/api/createAccount/&lt;/td&gt;
+      &lt;/tr&gt;
+      
+    &lt;/table&gt;
+  &lt;/div&gt;
+  &lt;div id="info"&gt;
+    
+      &lt;p&gt;
+      Using the URLconf defined in &lt;code&gt;automation_exercise.urls&lt;/code&gt;,
+      Django tried these URL patterns, in this order:
+      &lt;/p&gt;
+      &lt;ol&gt;
+        
+          &lt;li&gt;
+            
+                admin/
+                
+            
+          &lt;/li&gt;
+        
+          &lt;li&gt;
+            
+                
+                
+            
+          &lt;/li&gt;
+        
+          &lt;li&gt;
+            
+                get_product_picture/&amp;lt;int:product_id&amp;gt;
+                
+            
+          &lt;/li&gt;
+        
+          &lt;li&gt;
+            
+                product_details/&amp;lt;int:product_id&amp;gt;
+                
+            
+          &lt;/li&gt;
+        
+          &lt;li&gt;
+            
+                products
+                
+            
+          &lt;/li&gt;
+        
+          &lt;li&gt;
+            
+                contact_us
+                
+            
+          &lt;/li&gt;
+        
+          &lt;li&gt;
+            
+                add_to_cart/&amp;lt;int:product_id&amp;gt;
+                
+            
+          &lt;/li&gt;
+        
+          &lt;li&gt;
+            
+                view_cart
+                
+            
+          &lt;/li&gt;
+        
+          &lt;li&gt;
+            
+                delete_cart/&amp;lt;int:product_id&amp;gt;
+                
+            
+          &lt;/li&gt;
+        
+          &lt;li&gt;
+            
+                login
+                
+            
+          &lt;/li&gt;
+        
+          &lt;li&gt;
+            
+                signup
+                
+            
+          &lt;/li&gt;
+        
+          &lt;li&gt;
+            
+                account_created
+                
+            
+          &lt;/li&gt;
+        
+          &lt;li&gt;
+            
+                logout
+                
+            
+          &lt;/li&gt;
+        
+          &lt;li&gt;
+            
+                checkout
+                
+            
+          &lt;/li&gt;
+        
+          &lt;li&gt;
+            
+                payment
+                
+            
+          &lt;/li&gt;
+        
+          &lt;li&gt;
+            
+                delete_account
+                
+            
+          &lt;/li&gt;
+        
+          &lt;li&gt;
+            
+                brand_products/&amp;lt;str:brand&amp;gt;
+                
+            
+          &lt;/li&gt;
+        
+          &lt;li&gt;
+            
+                category_products/&amp;lt;int:category_id&amp;gt;
+                
+            
+          &lt;/li&gt;
+        
+          &lt;li&gt;
+            
+                test_cases
+                
+            
+          &lt;/li&gt;
+        
+          &lt;li&gt;
+            
+                api_list
+                
+            
+          &lt;/li&gt;
+        
+          &lt;li&gt;
+            
+                download_invoice/&amp;lt;int:overall_amount&amp;gt;
+                
+            
+          &lt;/li&gt;
+        
+          &lt;li&gt;
+            
+                payment_done/&amp;lt;int:overall_amount&amp;gt;
+                
+            
+          &lt;/li&gt;
+        
+          &lt;li&gt;
+            
+                video_tutorials
+                
+            
+          &lt;/li&gt;
+        
+          &lt;li&gt;
+            
+                api/productsList
+                
+            
+          &lt;/li&gt;
+        
+          &lt;li&gt;
+            
+                api/brandsList
+                
+            
+          &lt;/li&gt;
+        
+          &lt;li&gt;
+            
+                api/searchProduct
+                
+            
+          &lt;/li&gt;
+        
+          &lt;li&gt;
+            
+                api/verifyLogin
+                
+            
+          &lt;/li&gt;
+        
+          &lt;li&gt;
+            
+                api/createAccount
+                
+            
+          &lt;/li&gt;
+        
+          &lt;li&gt;
+            
+                api/deleteAccount
+                
+            
+          &lt;/li&gt;
+        
+          &lt;li&gt;
+            
+                api/updateAccount
+                
+            
+          &lt;/li&gt;
+        
+          &lt;li&gt;
+            
+                api/getUserDetailByEmail
+                
+            
+          &lt;/li&gt;
+        
+          &lt;li&gt;
+            
+                &amp;lt;str:random_string&amp;gt;
+                
+            
+          &lt;/li&gt;
+        
+          &lt;li&gt;
+            
+                ^static/(?P&amp;lt;path&amp;gt;.*)$
+                
+            
+          &lt;/li&gt;
+        
+      &lt;/ol&gt;
+      &lt;p&gt;
+        
+          The current path, &lt;code&gt;api/createAccount/&lt;/code&gt;,
+        
+        didnât match any of these.
+      &lt;/p&gt;
+    
+  &lt;/div&gt;
+
+  &lt;div id="explanation"&gt;
+    &lt;p&gt;
+      Youâre seeing this error because you have &lt;code&gt;DEBUG = True&lt;/code&gt; in
+      your Django settings file. Change that to &lt;code&gt;False&lt;/code&gt;, and Django
+      will display a standard 404 page.
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+ 
+ </msg>
+<msg timestamp="20231221 09:06:11.472" level="INFO">C:\Users\thanachai\Lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'automationexercise.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg timestamp="20231221 09:06:11.472" level="FAIL">HTTPError: 404 Client Error: Not Found for url: https://automationexercise.com/api/createAccount/</msg>
+<status status="FAIL" starttime="20231221 09:06:10.515" endtime="20231221 09:06:11.473"/>
 </kw>
-<kw name="Click on 'Signup / Login' button" library="home-page">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${btn_signup_login}</arg>
-<arg>timeout=${default_timeout}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231220 17:46:46.269" endtime="20231220 17:46:46.292"/>
+<status status="FAIL" starttime="20231221 09:06:10.512" endtime="20231221 09:06:11.474"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${btn_signup_login}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231220 17:46:46.294" level="INFO">Clicking element 'xpath://*[@id="header"]/div/div/div/div[2]/div/ul/li[4]/a'.</msg>
-<status status="PASS" starttime="20231220 17:46:46.292" endtime="20231220 17:46:46.803"/>
+<status status="FAIL" starttime="20231221 09:06:10.511" endtime="20231221 09:06:11.474">HTTPError: 404 Client Error: Not Found for url: https://automationexercise.com/api/createAccount/</status>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231221 09:06:11.476" endtime="20231221 09:06:13.523"/>
 </kw>
-<status status="PASS" starttime="20231220 17:46:46.269" endtime="20231220 17:46:46.803"/>
-</kw>
-<kw name="Verify 'New User Signup!' is visible" library="signup-login-page">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${txt_New_User_Signup!}</arg>
-<arg>timeout=${default_timeout}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231220 17:46:46.803" endtime="20231220 17:46:46.832"/>
-</kw>
-<kw name="Element Text Should Be" library="SeleniumLibrary">
-<arg>${txt_New_User_Signup!}</arg>
-<arg>New User Signup!</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<msg timestamp="20231220 17:46:46.832" level="INFO">Verifying element 'xpath://*[@id="form"]/div/div/div[3]/div/h2' contains exact text 'New User Signup!'.</msg>
-<status status="PASS" starttime="20231220 17:46:46.832" endtime="20231220 17:46:46.854"/>
-</kw>
-<status status="PASS" starttime="20231220 17:46:46.803" endtime="20231220 17:46:46.854"/>
-</kw>
-<kw name="Enter name" library="signup-login-page">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${txt_field_name_signup}</arg>
-<arg>${user_name}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231220 17:46:46.855" level="INFO">Typing text 'thanachai' into text field 'xpath://*[@id="form"]/div/div/div[3]/div/form/input[2]'.</msg>
-<status status="PASS" starttime="20231220 17:46:46.855" endtime="20231220 17:46:46.940"/>
-</kw>
-<status status="PASS" starttime="20231220 17:46:46.854" endtime="20231220 17:46:46.940"/>
-</kw>
-<kw name="Enter email" library="signup-login-page">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${txt_field_email_signup}</arg>
-<arg>${user_email}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231220 17:46:46.941" level="INFO">Typing text 'tang@gmail.comtangkung' into text field 'xpath://*[@id="form"]/div/div/div[3]/div/form/input[3]'.</msg>
-<status status="PASS" starttime="20231220 17:46:46.941" endtime="20231220 17:46:47.048"/>
-</kw>
-<status status="PASS" starttime="20231220 17:46:46.940" endtime="20231220 17:46:47.048"/>
-</kw>
-<kw name="Click 'Signup' button" library="signup-login-page">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${btn_signup}</arg>
-<arg>timeout=${default_timeout}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231220 17:46:47.049" endtime="20231220 17:46:47.101"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${btn_signup}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231220 17:46:47.101" level="INFO">Clicking element 'xpath://*[@id="form"]/div/div/div[3]/div/form/button'.</msg>
-<status status="PASS" starttime="20231220 17:46:47.101" endtime="20231220 17:46:47.644"/>
-</kw>
-<status status="PASS" starttime="20231220 17:46:47.049" endtime="20231220 17:46:47.644"/>
-</kw>
-<kw name="Verify 'ENTER ACCOUNT INFORMATION' is visible" library="sign-up-page">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${title_sign_up_page}</arg>
-<arg>timeout=${default_timeout}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231220 17:46:47.644" endtime="20231220 17:46:47.663"/>
-</kw>
-<kw name="Element Text Should Be" library="SeleniumLibrary">
-<arg>${title_sign_up_page}</arg>
-<arg>ENTER ACCOUNT INFORMATION</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<msg timestamp="20231220 17:46:47.664" level="INFO">Verifying element 'xpath://*[@id="form"]/div/div/div/div/h2/b' contains exact text 'ENTER ACCOUNT INFORMATION'.</msg>
-<status status="PASS" starttime="20231220 17:46:47.663" endtime="20231220 17:46:47.676"/>
-</kw>
-<status status="PASS" starttime="20231220 17:46:47.644" endtime="20231220 17:46:47.676"/>
-</kw>
-<kw name="Fill details: Title, Name, Email, Password, Date of birth" library="sign-up-page">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${radio_btn_title}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231220 17:46:47.677" level="INFO">Clicking element 'xpath://*[@id="id_gender1"]'.</msg>
-<status status="PASS" starttime="20231220 17:46:47.677" endtime="20231220 17:46:47.785"/>
-</kw>
-<kw name="Clear Element Text" library="SeleniumLibrary">
-<arg>${sign_up_page_user_data_path}[username]</arg>
-<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" starttime="20231220 17:46:47.785" endtime="20231220 17:46:47.837"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${sign_up_page_user_data_path}[username]</arg>
-<arg>${sign_up_page_user_data}[username]</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231220 17:46:47.837" level="INFO">Typing text 'thanachai' into text field 'xpath://*[@id="name"]'.</msg>
-<status status="PASS" starttime="20231220 17:46:47.837" endtime="20231220 17:46:47.922"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${sign_up_page_user_data_path}[password]</arg>
-<arg>${sign_up_page_user_data}[password]</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231220 17:46:47.922" level="INFO">Typing text 'password' into text field 'xpath://*[@id="password"]'.</msg>
-<status status="PASS" starttime="20231220 17:46:47.922" endtime="20231220 17:46:47.997"/>
-</kw>
-<kw name="Select From List By Value" library="SeleniumLibrary">
-<arg>${sign_up_page_user_data_path}[drop_down_date]</arg>
-<arg>${sign_up_page_user_data}[date]</arg>
-<doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<msg timestamp="20231220 17:46:47.997" level="INFO">Selecting options from selection list 'xpath://*[@id="days"]' by value 1.</msg>
-<status status="PASS" starttime="20231220 17:46:47.997" endtime="20231220 17:46:48.066"/>
-</kw>
-<kw name="Select From List By Value" library="SeleniumLibrary">
-<arg>${sign_up_page_user_data_path}[drop_down_month]</arg>
-<arg>${sign_up_page_user_data}[month]</arg>
-<doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<msg timestamp="20231220 17:46:48.067" level="INFO">Selecting options from selection list ' xpath://*[@id="months"]' by value 1.</msg>
-<status status="PASS" starttime="20231220 17:46:48.066" endtime="20231220 17:46:48.131"/>
-</kw>
-<kw name="Select From List By Value" library="SeleniumLibrary">
-<arg>${sign_up_page_user_data_path}[drop_down_year]</arg>
-<arg>${sign_up_page_user_data}[year]</arg>
-<doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<msg timestamp="20231220 17:46:48.131" level="INFO">Selecting options from selection list 'xpath://*[@id="years"]' by value 2001.</msg>
-<status status="PASS" starttime="20231220 17:46:48.131" endtime="20231220 17:46:48.194"/>
-</kw>
-<status status="PASS" starttime="20231220 17:46:47.676" endtime="20231220 17:46:48.194"/>
-</kw>
-<kw name="Select checkbox 'Sign up for our newsletter!" library="sign-up-page">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${check_box_Sign_up_for_our_newsletter!}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231220 17:46:48.195" level="INFO">Clicking element 'xpath://*[@id="newsletter"]'.</msg>
-<status status="PASS" starttime="20231220 17:46:48.195" endtime="20231220 17:46:48.245"/>
-</kw>
-<status status="PASS" starttime="20231220 17:46:48.195" endtime="20231220 17:46:48.245"/>
-</kw>
-<kw name="Select checkbox 'Receive special offers from our partners!" library="sign-up-page">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${check_box_Receive_special_offers_from_our_partners!}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231220 17:46:48.246" level="INFO">Clicking element 'xpath://*[@id="optin"]'.</msg>
-<status status="PASS" starttime="20231220 17:46:48.245" endtime="20231220 17:46:48.295"/>
-</kw>
-<status status="PASS" starttime="20231220 17:46:48.245" endtime="20231220 17:46:48.295"/>
-</kw>
-<kw name="Fill details: First name, Last name, Company, Address, Address2, Country, State, City, Zipcode, Mobile Number" library="sign-up-page">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${sign_up_page_user_data_path}[first_name]</arg>
-<arg>${sign_up_page_user_data}[first_name]</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231220 17:46:48.297" level="INFO">Typing text 'firstname' into text field 'xpath://*[@id="first_name"]'.</msg>
-<status status="PASS" starttime="20231220 17:46:48.296" endtime="20231220 17:46:48.380"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${sign_up_page_user_data_path}[last_name]</arg>
-<arg>${sign_up_page_user_data}[last_name]</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231220 17:46:48.380" level="INFO">Typing text 'lastname' into text field 'xpath://*[@id="last_name"]'.</msg>
-<status status="PASS" starttime="20231220 17:46:48.380" endtime="20231220 17:46:48.452"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${sign_up_page_user_data_path}[company]</arg>
-<arg>${sign_up_page_user_data}[company]</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231220 17:46:48.452" level="INFO">Typing text 'company' into text field 'xpath://*[@id="company"]'.</msg>
-<status status="PASS" starttime="20231220 17:46:48.452" endtime="20231220 17:46:48.523"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${sign_up_page_user_data_path}[address1]</arg>
-<arg>${sign_up_page_user_data}[address1]</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231220 17:46:48.523" level="INFO">Typing text 'address' into text field 'xpath://*[@id="address1"]'.</msg>
-<status status="PASS" starttime="20231220 17:46:48.523" endtime="20231220 17:46:48.593"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${sign_up_page_user_data_path}[address2]</arg>
-<arg>${sign_up_page_user_data}[address2]</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231220 17:46:48.593" level="INFO">Typing text 'address2' into text field 'xpath://*[@id="address2"]'.</msg>
-<status status="PASS" starttime="20231220 17:46:48.593" endtime="20231220 17:46:48.664"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${sign_up_page_user_data_path}[state]</arg>
-<arg>${sign_up_page_user_data}[state]</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231220 17:46:48.664" level="INFO">Typing text 'state' into text field 'xpath://*[@id="state"]'.</msg>
-<status status="PASS" starttime="20231220 17:46:48.664" endtime="20231220 17:46:48.732"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${sign_up_page_user_data_path}[city]</arg>
-<arg>${sign_up_page_user_data}[city]</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231220 17:46:48.733" level="INFO">Typing text 'city' into text field 'xpath://*[@id="city"]'.</msg>
-<status status="PASS" starttime="20231220 17:46:48.732" endtime="20231220 17:46:48.803"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${sign_up_page_user_data_path}[zibcode]</arg>
-<arg>${sign_up_page_user_data}[zipcode]</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231220 17:46:48.804" level="INFO">Typing text '10000' into text field 'xpath://*[@id="zipcode"]'.</msg>
-<status status="PASS" starttime="20231220 17:46:48.803" endtime="20231220 17:46:48.872"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${sign_up_page_user_data_path}[mobile_number]</arg>
-<arg>${sign_up_page_user_data}[mobile_number]</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231220 17:46:48.873" level="INFO">Typing text '0829269788' into text field 'xpath://*[@id="mobile_number"]'.</msg>
-<status status="PASS" starttime="20231220 17:46:48.873" endtime="20231220 17:46:48.944"/>
-</kw>
-<kw name="Select From List By Value" library="SeleniumLibrary">
-<arg>${sign_up_page_user_data_path}[drop_down_country]</arg>
-<arg>${sign_up_page_user_data}[country]</arg>
-<doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<msg timestamp="20231220 17:46:48.944" level="INFO">Selecting options from selection list 'xpath://*[@id="country"]' by value Canada.</msg>
-<status status="PASS" starttime="20231220 17:46:48.944" endtime="20231220 17:46:49.003"/>
-</kw>
-<status status="PASS" starttime="20231220 17:46:48.296" endtime="20231220 17:46:49.003"/>
-</kw>
-<kw name="Click 'Create Account button" library="sign-up-page">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${btn_create_account}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231220 17:46:49.004" level="INFO">Clicking element 'xpath://*[@id="form"]/div/div/div/div/form/button'.</msg>
-<status status="PASS" starttime="20231220 17:46:49.003" endtime="20231220 17:46:49.889"/>
-</kw>
-<status status="PASS" starttime="20231220 17:46:49.003" endtime="20231220 17:46:49.889"/>
-</kw>
-<kw name="Click 'Continue' button" library="sign-up-page">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${btn_conntinue}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231220 17:46:49.891" level="INFO">Clicking element 'xpath://*[@id="form"]/div/div/div/div/a'.</msg>
-<status status="PASS" starttime="20231220 17:46:49.889" endtime="20231220 17:46:55.034"/>
-</kw>
-<status status="PASS" starttime="20231220 17:46:49.889" endtime="20231220 17:46:55.034"/>
-</kw>
+<status status="FAIL" starttime="20231221 09:06:07.528" endtime="20231221 09:06:13.523"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Test-Case-2-Login-User">Test-Case-2-Login-User</stat>
+</suite>
+</statistics>
 <errors>
-<msg timestamp="20231220 17:46:40.006" level="ERROR">Error in file 'D:\Robot_framework\Keywords\Aumation-ex\signup-login-page.robot' on line 42: Creating keyword 'Verify that 'Logged in as username' is visible' failed: User keyword cannot be empty.</msg>
-<msg timestamp="20231220 17:46:55.038" level="ERROR">Unexpected error: AttributeError: 'UserErrorHandler' object has no attribute 'private'
-Traceback (most recent call last):
-  File "C:\Users\thanachai\Lib\site-packages\robot\utils\application.py", line 81, in _execute
-    rc = self.main(arguments, **options)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\thanachai\Lib\site-packages\robot\run.py", line 458, in main
-    result = suite.run(settings)
-             ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\thanachai\Lib\site-packages\robot\running\model.py", line 606, in run
-    self.visit(runner)
-  File "C:\Users\thanachai\Lib\site-packages\robot\model\testsuite.py", line 426, in visit
-    visitor.visit_suite(self)
-  File "C:\Users\thanachai\Lib\site-packages\robot\model\visitor.py", line 132, in visit_suite
-    suite.tests.visit(self)
-  File "C:\Users\thanachai\Lib\site-packages\robot\model\itemlist.py", line 102, in visit
-    item.visit(visitor)    # type: ignore
-    ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\thanachai\Lib\site-packages\robot\model\testcase.py", line 186, in visit
-    visitor.visit_test(self)
-  File "C:\Users\thanachai\Lib\site-packages\robot\running\suiterunner.py", line 167, in visit_test
-    BodyRunner(self._context, templated=bool(test.template)).run(test.body)
-  File "C:\Users\thanachai\Lib\site-packages\robot\running\bodyrunner.py", line 51, in run
-    step.run(self._context, self._run, self._templated)
-  File "C:\Users\thanachai\Lib\site-packages\robot\running\model.py", line 112, in run
-    return KeywordRunner(context, run).run(self)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\thanachai\Lib\site-packages\robot\running\bodyrunner.py", line 73, in run
-    runner = context.get_runner(name or step.name)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\thanachai\Lib\site-packages\robot\running\context.py", line 251, in get_runner
-    return self.namespace.get_runner(name)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\thanachai\Lib\site-packages\robot\running\namespace.py", line 220, in get_runner
-    return self._kw_store.get_runner(name, recommend_on_failure)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\thanachai\Lib\site-packages\robot\running\namespace.py", line 261, in get_runner
-    runner = self._get_runner(name)
-             ^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\thanachai\Lib\site-packages\robot\running\namespace.py", line 296, in _get_runner
-    runner = self._get_implicit_runner(name)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\thanachai\Lib\site-packages\robot\running\namespace.py", line 314, in _get_implicit_runner
-    return (self._get_runner_from_resource_files(name) or
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\thanachai\Lib\site-packages\robot\running\namespace.py", line 375, in _get_runner_from_resource_files
-    handlers = self._prioritize_same_file_or_public(handlers)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\thanachai\Lib\site-packages\robot\running\namespace.py", line 408, in _prioritize_same_file_or_public
-    matches = [handler for handler in handlers if not handler.private]
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\thanachai\Lib\site-packages\robot\running\namespace.py", line 408, in &lt;listcomp&gt;
-    matches = [handler for handler in handlers if not handler.private]
-                                                      ^^^^^^^^^^^^^^^
-AttributeError: 'UserErrorHandler' object has no attribute 'private'</msg>
 </errors>
 </robot>

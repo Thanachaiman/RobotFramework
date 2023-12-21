@@ -26,5 +26,5 @@ Register User
     Click 'Create Account button
     Click 'Continue' button
     Verify that 'Logged in as username' is visible
-
-# API 12: DELETE METHOD To Delete User Account
+    Click 'Delete Account' button
+    Verify that 'ACCOUNT DELETED!' is visible
