@@ -35,14 +35,14 @@ Verify 'ENTER ACCOUNT INFORMATION' is visible
     Wait Until Element Is Visible    ${title_sign_up_page}    timeout=${default_timeout}
     Element Text Should Be    ${title_sign_up_page}    ENTER ACCOUNT INFORMATION
 
-Fill details data with: ${title}, ${name}, ${password}, ${date}, ${month}, ${year}
-    Click Element    ${title}
+Fill details data with: &{user_data}
+    Click Element    ${user_data}[title]
     Clear Element Text    ${sign_up_page_user_data_path}[username]
-    Input Text    ${sign_up_page_user_data_path}[username]    ${name}
-    Input Text    ${sign_up_page_user_data_path}[password]    ${password}
-    Select From List by Value    ${sign_up_page_user_data_path}[drop_down_date]    ${date}
-    Select From List by Value    ${sign_up_page_user_data_path}[drop_down_month]    ${month}
-    Select From List by Value    ${sign_up_page_user_data_path}[drop_down_year]    ${year}
+    Input Text    ${sign_up_page_user_data_path}[username]    ${user_data}[name]
+    Input Text    ${sign_up_page_user_data_path}[password]    ${user_data}[password]
+    Select From List by Value    ${sign_up_page_user_data_path}[drop_down_date]    ${user_data}[date]
+    Select From List by Value    ${sign_up_page_user_data_path}[drop_down_month]    ${user_data}[month]
+    Select From List by Value    ${sign_up_page_user_data_path}[drop_down_year]    ${user_data}[year]
 
 Select checkbox 'Sign up for our newsletter!
     Click Element    ${check_box_Sign_up_for_our_newsletter!}
@@ -50,19 +50,19 @@ Select checkbox 'Sign up for our newsletter!
 Select checkbox 'Receive special offers from our partners!
     Click Element    ${check_box_Receive_special_offers_from_our_partners!}
 
-Fill details address with: ${first_name}, ${last_name}, ${company}, ${address1}, ${address2}, ${country}, ${state}, ${city}, ${zipcode}, ${mobile_number}
-    Input Text    ${sign_up_page_user_data_path}[first_name]    ${first_name}
-    Input Text    ${sign_up_page_user_data_path}[last_name]    ${last_name}
-    Input Text    ${sign_up_page_user_data_path}[company]    ${company}
-    Input Text    ${sign_up_page_user_data_path}[address1]    ${address1}
-    Input Text    ${sign_up_page_user_data_path}[address2]    ${address2}
-    Input Text    ${sign_up_page_user_data_path}[state]    ${state}
-    Input Text    ${sign_up_page_user_data_path}[city]    ${city}
-    Input Text    ${sign_up_page_user_data_path}[zibcode]    ${zipcode}
-    Input Text    ${sign_up_page_user_data_path}[mobile_number]    ${mobile_number}
+Fill details address with: &{user_data}
+    Input Text    ${sign_up_page_user_data_path}[first_name]    ${user_data}[first_name]
+    Input Text    ${sign_up_page_user_data_path}[last_name]    ${user_data}[last_name]
+    Input Text    ${sign_up_page_user_data_path}[company]    ${user_data}[company]
+    Input Text    ${sign_up_page_user_data_path}[address1]    ${user_data}[address1]
+    Input Text    ${sign_up_page_user_data_path}[address2]    ${user_data}[address2]
+    Input Text    ${sign_up_page_user_data_path}[state]    ${user_data}[state]
+    Input Text    ${sign_up_page_user_data_path}[city]    ${user_data}[city]
+    Input Text    ${sign_up_page_user_data_path}[zibcode]    ${user_data}[zipcode]
+    Input Text    ${sign_up_page_user_data_path}[mobile_number]    ${user_data}[mobile_number]
     Select From List by Value
     ...    ${sign_up_page_user_data_path}[drop_down_country]
-    ...    ${country}
+    ...    ${user_data}[country]
 
 Click 'Create Account button
     Click Element    ${btn_create_account}

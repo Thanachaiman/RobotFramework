@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.3 on win32)" generated="20231221 11:21:05.529" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.11.3 on win32)" generated="20231221 17:27:56.403" rpa="false" schemaversion="4">
 <suite id="s1" name="Test-Case-2-Login-User" source="D:\Robot_framework\Testsuites\Automation-ex\Test-Case-2-Login-User.robot">
 <kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
-<arg>url=http://automationexercise.com</arg>
-<arg>browser=chrome</arg>
+<arg>url=${global_url}</arg>
+<arg>browser=${default_browser}</arg>
 <arg>options=add_argument("--headless")</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231221 11:21:05.850" level="INFO">Opening browser 'chrome' to base url 'http://automationexercise.com'.</msg>
-<status status="PASS" starttime="20231221 11:21:05.849" endtime="20231221 11:21:11.097"/>
+<msg timestamp="20231221 17:27:56.676" level="INFO">Opening browser 'chrome' to base url 'http://automationexercise.com'.</msg>
+<status status="PASS" starttime="20231221 17:27:56.675" endtime="20231221 17:28:02.100"/>
 </kw>
 <test id="s1-t1" name="Register User" line="15">
 <kw name="When Register USING API &amp;{user_data}" library="sign-up-page">
@@ -15,8 +15,8 @@
 <arg>placeholder</arg>
 <arg>${url}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20231221 11:21:11.098" level="INFO">Creating Session using : alias=placeholder, url=https://automationexercise.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20231221 11:21:11.098" endtime="20231221 11:21:11.098"/>
+<msg timestamp="20231221 17:28:02.101" level="INFO">Creating Session using : alias=placeholder, url=https://automationexercise.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20231221 17:28:02.101" endtime="20231221 17:28:02.101"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>&amp;{params}</var>
@@ -38,8 +38,8 @@
 <arg>city=${user_data}[city]</arg>
 <arg>mobile_number=${user_data}[mobile_number]</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20231221 11:21:11.099" level="INFO">&amp;{params} = { name=thanachai | email=tang@gmail.comtangkung | password=password | title=Mr | birth_date=1 | birth_month=1 | birth_year=2001 | firstname=firstname | lastname=lastname | company=company | address1=a...</msg>
-<status status="PASS" starttime="20231221 11:21:11.098" endtime="20231221 11:21:11.099"/>
+<msg timestamp="20231221 17:28:02.102" level="INFO">&amp;{params} = { name=thanachai | email=tang@gmail.comtangkung | password=password | title=Mr | birth_date=1 | birth_month=1 | birth_year=2001 | firstname=firstname | lastname=lastname | company=company | address1=a...</msg>
+<status status="PASS" starttime="20231221 17:28:02.101" endtime="20231221 17:28:02.102"/>
 </kw>
 <kw name="POST On Session" library="RequestsLibrary">
 <var>${response}</var>
@@ -47,138 +47,138 @@
 <arg>/api/createAccount</arg>
 <arg>data=${params}</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20231221 11:21:12.025" level="INFO">POST Request : url=https://automationexercise.com/api/createAccount 
+<msg timestamp="20231221 17:28:03.069" level="INFO">POST Request : url=https://automationexercise.com/api/createAccount 
  path_url=/api/createAccount 
  headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '280', 'Content-Type': 'application/x-www-form-urlencoded'} 
  body=name=thanachai&amp;email=tang%40gmail.comtangkung&amp;password=password&amp;title=Mr&amp;birth_date=1&amp;birth_month=1&amp;birth_year=2001&amp;firstname=firstname&amp;lastname=lastname&amp;company=company&amp;address1=address&amp;address2=address2&amp;country=Canada&amp;zipcode=10000&amp;state=state&amp;city=city&amp;mobile_number=0829269788 
  </msg>
-<msg timestamp="20231221 11:21:12.025" level="INFO">POST Response : url=https://automationexercise.com/api/createAccount 
+<msg timestamp="20231221 17:28:03.069" level="INFO">POST Response : url=https://automationexercise.com/api/createAccount 
  status=200, reason=OK 
- headers={'Date': 'Thu, 21 Dec 2023 04:21:12 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'vary': 'Accept,Cookie,Accept-Encoding', 'referrer-policy': 'same-origin', 'x-frame-options': 'DENY', 'x-content-type-options': 'nosniff', 'allow': 'OPTIONS, POST', 'x-powered-by': 'Phusion Passenger 6.0.7', 'status': '200 OK', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=%2Fqt%2BYDr1%2FUzf0tOYaY6Y5BHYGZgPwQjeb411%2BXwvi2VFd%2BPBdK%2BrDyXUyL7Asc3dRnNCAK54pTybAFhRO9q8ev%2BIH8%2BnI0wDs0ekZ9bu3kfAEGxT47QmgUY1yOpR3Bg1iw25C%2FQORnmc"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '838d563a9cb6a125-SIN', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ headers={'Date': 'Thu, 21 Dec 2023 10:28:03 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'vary': 'Accept,Cookie,Accept-Encoding', 'referrer-policy': 'same-origin', 'x-frame-options': 'DENY', 'x-content-type-options': 'nosniff', 'allow': 'OPTIONS, POST', 'x-powered-by': 'Phusion Passenger 6.0.7', 'status': '200 OK', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=%2Ft8ynAk1Mne%2BTnw1IR4PbKrOcGzJf7eC%2FcYZTtGjROlXKUiEwLcHGw6TtQiH8SSxYch6vnVbJ2B6uheoti1%2FxRZVYCXdKRyD6Ul1DfsUlzeH3w3%2B1Of6dutEmI4RyD75CK%2BrRHTmRwH1"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '838f6f9dde5b6592-SIN', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
  body={"responseCode": 201, "message": "User created!"} 
  </msg>
-<msg timestamp="20231221 11:21:12.025" level="INFO">C:\Users\thanachai\Lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'automationexercise.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg timestamp="20231221 17:28:03.070" level="INFO">C:\Users\thanachai\Lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'automationexercise.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg timestamp="20231221 11:21:12.026" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20231221 11:21:11.099" endtime="20231221 11:21:12.026"/>
+<msg timestamp="20231221 17:28:03.070" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231221 17:28:02.102" endtime="20231221 17:28:03.070"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${response.status_code}</arg>
 <arg>${200}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20231221 11:21:12.026" endtime="20231221 11:21:12.027"/>
+<status status="PASS" starttime="20231221 17:28:03.070" endtime="20231221 17:28:03.071"/>
 </kw>
 <kw name="Log Many" library="BuiltIn">
 <arg>${response}</arg>
 <doc>Logs the given messages as separate entries using the INFO level.</doc>
-<msg timestamp="20231221 11:21:12.027" level="INFO">&lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20231221 11:21:12.027" endtime="20231221 11:21:12.027"/>
+<msg timestamp="20231221 17:28:03.071" level="INFO">&lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231221 17:28:03.071" endtime="20231221 17:28:03.071"/>
 </kw>
-<status status="PASS" starttime="20231221 11:21:11.097" endtime="20231221 11:21:12.027"/>
+<status status="PASS" starttime="20231221 17:28:02.100" endtime="20231221 17:28:03.071"/>
 </kw>
 <kw name="And Verify that home page is visible successfully" library="home-page">
 <kw name="Title Should Be" library="SeleniumLibrary">
 <arg>${page_title}</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20231221 11:21:12.032" level="INFO">Page title is 'Automation Exercise'.</msg>
-<status status="PASS" starttime="20231221 11:21:12.027" endtime="20231221 11:21:12.032"/>
+<msg timestamp="20231221 17:28:03.078" level="INFO">Page title is 'Automation Exercise'.</msg>
+<status status="PASS" starttime="20231221 17:28:03.072" endtime="20231221 17:28:03.078"/>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <arg>${img_automation_exercise}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20231221 11:21:12.052" level="INFO">Element 'xpath://*[@id="header"]/div/div/div/div[1]/div/a/img' is displayed.</msg>
-<status status="PASS" starttime="20231221 11:21:12.032" endtime="20231221 11:21:12.052"/>
+<msg timestamp="20231221 17:28:03.125" level="INFO">Element 'xpath://*[@id="header"]/div/div/div/div[1]/div/a/img' is displayed.</msg>
+<status status="PASS" starttime="20231221 17:28:03.078" endtime="20231221 17:28:03.125"/>
 </kw>
-<status status="PASS" starttime="20231221 11:21:12.027" endtime="20231221 11:21:12.052"/>
+<status status="PASS" starttime="20231221 17:28:03.072" endtime="20231221 17:28:03.125"/>
 </kw>
 <kw name="And Click on 'Signup / Login' button" library="home-page">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${btn_signup_login}</arg>
 <arg>timeout=${default_timeout}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231221 11:21:12.052" endtime="20231221 11:21:12.071"/>
+<status status="PASS" starttime="20231221 17:28:03.126" endtime="20231221 17:28:03.146"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${btn_signup_login}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231221 11:21:12.072" level="INFO">Clicking element 'xpath://*[@id="header"]/div/div/div/div[2]/div/ul/li[4]/a'.</msg>
-<status status="PASS" starttime="20231221 11:21:12.071" endtime="20231221 11:21:13.079"/>
+<msg timestamp="20231221 17:28:03.146" level="INFO">Clicking element 'xpath://*[@id="header"]/div/div/div/div[2]/div/ul/li[4]/a'.</msg>
+<status status="PASS" starttime="20231221 17:28:03.146" endtime="20231221 17:28:03.738"/>
 </kw>
-<status status="PASS" starttime="20231221 11:21:12.052" endtime="20231221 11:21:13.079"/>
+<status status="PASS" starttime="20231221 17:28:03.126" endtime="20231221 17:28:03.738"/>
 </kw>
 <kw name="Then Verify 'New User Signup!' is visible" library="signup-login-page">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${txt_New_User_Signup!}</arg>
 <arg>timeout=${default_timeout}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231221 11:21:13.079" endtime="20231221 11:21:13.095"/>
+<status status="PASS" starttime="20231221 17:28:03.739" endtime="20231221 17:28:03.754"/>
 </kw>
 <kw name="Element Text Should Be" library="SeleniumLibrary">
 <arg>${txt_New_User_Signup!}</arg>
 <arg>New User Signup!</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<msg timestamp="20231221 11:21:13.096" level="INFO">Verifying element 'xpath://*[@id="form"]/div/div/div[3]/div/h2' contains exact text 'New User Signup!'.</msg>
-<status status="PASS" starttime="20231221 11:21:13.095" endtime="20231221 11:21:13.111"/>
+<msg timestamp="20231221 17:28:03.755" level="INFO">Verifying element 'xpath://*[@id="form"]/div/div/div[3]/div/h2' contains exact text 'New User Signup!'.</msg>
+<status status="PASS" starttime="20231221 17:28:03.754" endtime="20231221 17:28:03.769"/>
 </kw>
-<status status="PASS" starttime="20231221 11:21:13.079" endtime="20231221 11:21:13.111"/>
+<status status="PASS" starttime="20231221 17:28:03.739" endtime="20231221 17:28:03.769"/>
 </kw>
 <kw name="When Enter ${user_data}[email] and ${user_data}[password]" library="signup-login-page" sourcename="Enter ${email} and ${password}">
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${txt_field_name_login}</arg>
 <arg>${email}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231221 11:21:13.111" level="INFO">Typing text 'tang@gmail.comtangkung' into text field 'xpath://*[@id="form"]/div/div/div[1]/div/form/input[2]'.</msg>
-<status status="PASS" starttime="20231221 11:21:13.111" endtime="20231221 11:21:13.244"/>
+<msg timestamp="20231221 17:28:03.770" level="INFO">Typing text 'tang@gmail.comtangkung' into text field 'xpath://*[@id="form"]/div/div/div[1]/div/form/input[2]'.</msg>
+<status status="PASS" starttime="20231221 17:28:03.770" endtime="20231221 17:28:03.892"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${txt_field_email_login}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231221 11:21:13.245" level="INFO">Typing text 'password' into text field 'xpath://*[@id="form"]/div/div/div[1]/div/form/input[3]'.</msg>
-<status status="PASS" starttime="20231221 11:21:13.244" endtime="20231221 11:21:13.303"/>
+<msg timestamp="20231221 17:28:03.893" level="INFO">Typing text 'password' into text field 'xpath://*[@id="form"]/div/div/div[1]/div/form/input[3]'.</msg>
+<status status="PASS" starttime="20231221 17:28:03.892" endtime="20231221 17:28:03.953"/>
 </kw>
-<status status="PASS" starttime="20231221 11:21:13.111" endtime="20231221 11:21:13.303"/>
+<status status="PASS" starttime="20231221 17:28:03.770" endtime="20231221 17:28:03.954"/>
 </kw>
 <kw name="And Click 'Login' button" library="signup-login-page">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${btn_login}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231221 11:21:13.304" level="INFO">Clicking element 'xpath://*[@id="form"]/div/div/div[1]/div/form/button'.</msg>
-<status status="PASS" starttime="20231221 11:21:13.304" endtime="20231221 11:21:17.481"/>
+<msg timestamp="20231221 17:28:03.954" level="INFO">Clicking element 'xpath://*[@id="form"]/div/div/div[1]/div/form/button'.</msg>
+<status status="PASS" starttime="20231221 17:28:03.954" endtime="20231221 17:28:07.123"/>
 </kw>
-<status status="PASS" starttime="20231221 11:21:13.303" endtime="20231221 11:21:17.481"/>
+<status status="PASS" starttime="20231221 17:28:03.954" endtime="20231221 17:28:07.123"/>
 </kw>
 <kw name="And Click 'Delete Account' button" library="home-page">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${btn_delete_account}</arg>
 <arg>timeout=${default_timeout}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231221 11:21:17.483" endtime="20231221 11:21:17.498"/>
+<status status="PASS" starttime="20231221 17:28:07.124" endtime="20231221 17:28:07.141"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${btn_delete_account}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231221 11:21:17.498" level="INFO">Clicking element 'xpath://*[@id="header"]/div/div/div/div[2]/div/ul/li[5]/a'.</msg>
-<status status="PASS" starttime="20231221 11:21:17.498" endtime="20231221 11:21:17.988"/>
+<msg timestamp="20231221 17:28:07.142" level="INFO">Clicking element 'xpath://*[@id="header"]/div/div/div/div[2]/div/ul/li[5]/a'.</msg>
+<status status="PASS" starttime="20231221 17:28:07.141" endtime="20231221 17:28:07.696"/>
 </kw>
-<status status="PASS" starttime="20231221 11:21:17.483" endtime="20231221 11:21:17.988"/>
+<status status="PASS" starttime="20231221 17:28:07.124" endtime="20231221 17:28:07.696"/>
 </kw>
 <kw name="Then Verify that 'ACCOUNT DELETED!' is visible" library="home-page">
 <kw name="Page Should Contain" library="SeleniumLibrary">
 <arg>Account Deleted!</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20231221 11:21:17.999" level="INFO">Current page contains text 'Account Deleted!'.</msg>
-<status status="PASS" starttime="20231221 11:21:17.989" endtime="20231221 11:21:17.999"/>
+<msg timestamp="20231221 17:28:07.707" level="INFO">Current page contains text 'Account Deleted!'.</msg>
+<status status="PASS" starttime="20231221 17:28:07.697" endtime="20231221 17:28:07.707"/>
 </kw>
-<status status="PASS" starttime="20231221 11:21:17.989" endtime="20231221 11:21:18.000"/>
+<status status="PASS" starttime="20231221 17:28:07.697" endtime="20231221 17:28:07.707"/>
 </kw>
-<status status="PASS" starttime="20231221 11:21:11.097" endtime="20231221 11:21:18.000"/>
+<status status="PASS" starttime="20231221 17:28:02.100" endtime="20231221 17:28:07.707"/>
 </test>
 <kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20231221 11:21:18.000" endtime="20231221 11:21:20.057"/>
+<status status="PASS" starttime="20231221 17:28:07.709" endtime="20231221 17:28:09.757"/>
 </kw>
-<status status="PASS" starttime="20231221 11:21:05.530" endtime="20231221 11:21:20.057"/>
+<status status="PASS" starttime="20231221 17:27:56.404" endtime="20231221 17:28:09.757"/>
 </suite>
 <statistics>
 <total>

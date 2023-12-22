@@ -5,9 +5,9 @@ Library             Collections
 Resource            ../../Keywords/Aumation-ex/home-page.robot
 Resource            ../../Keywords/Aumation-ex/sign-up-page.robot
 Resource            ../../Keywords/Aumation-ex/signup-login-page.robot
-Resource            ../../Variables/userVariables.robot
+Resource            ../../Variables/automatation-ex-Variables.robot
 
-Suite Setup         Open Browser    url=http://automationexercise.com    browser=chrome    options=add_argument("--headless")
+Suite Setup         Open Browser    url=${global_url}    browser=${default_browser}    options=add_argument("--headless")
 Suite Teardown      Close Browser
 
 
