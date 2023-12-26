@@ -7,9 +7,10 @@ ${txt_field_name_signup}        xpath://*[@id="form"]/div/div/div[3]/div/form/in
 ${txt_field_email_signup}       xpath://*[@id="form"]/div/div/div[3]/div/form/input[3]
 ${txt_field_name_login}         xpath://*[@id="form"]/div/div/div[1]/div/form/input[2]
 ${txt_field_email_login}        xpath://*[@id="form"]/div/div/div[1]/div/form/input[3]
-${user_password}                password
 ${btn_login}                    xpath://*[@id="form"]/div/div/div[1]/div/form/button
 ${btn_signup}                   xpath://*[@id="form"]/div/div/div[3]/div/form/button
+
+${user_password}                password
 
 
 *** Keywords ***

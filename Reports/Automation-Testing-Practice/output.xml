@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.3 on win32)" generated="20231226 09:49:15.697" rpa="false" schemaversion="4">
+<suite id="s1" name="Automation-Testing-Practice" source="D:\Robot_framework\Testsuites\Automation-Testing-Practice\Automation-Testing-Practice.robot">
+<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
+<arg>url=${global_url}</arg>
+<arg>browser=${default_browser}</arg>
+<arg>options=add_argument("--headless")</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231226 09:49:15.997" level="INFO">Opening browser 'chrome' to base url 'https://testautomationpractice.blogspot.com/'.</msg>
+<status status="PASS" starttime="20231226 09:49:15.995" endtime="20231226 09:49:22.275"/>
+</kw>
+<test id="s1-t1" name="Verify Data In Tabs" line="54">
+<kw name="Verify that page is visible successfully" library="automation-testing-practice">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${path_txt_title}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231226 09:49:22.295" level="INFO">Element 'xpath://*[@id="header-inner"]/div[1]/h1' is displayed.</msg>
+<status status="PASS" starttime="20231226 09:49:22.276" endtime="20231226 09:49:22.295"/>
+</kw>
+<status status="PASS" starttime="20231226 09:49:22.275" endtime="20231226 09:49:22.295"/>
+</kw>
+<kw name="Search with ${empty_data}" library="automation-tabs" sourcename="Search with ${data}">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${path_search_input}</arg>
+<arg>${data}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231226 09:49:22.296" level="INFO">Typing text '' into text field 'xpath://*[@id="Wikipedia1_wikipedia-search-input"]'.</msg>
+<status status="PASS" starttime="20231226 09:49:22.296" endtime="20231226 09:49:22.368"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_search}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231226 09:49:22.369" level="INFO">Clicking element 'xpath://*[@id="Wikipedia1_wikipedia-search-form"]/div/span[2]/span[2]/input'.</msg>
+<status status="PASS" starttime="20231226 09:49:22.368" endtime="20231226 09:49:22.408"/>
+</kw>
+<status status="PASS" starttime="20231226 09:49:22.295" endtime="20231226 09:49:22.408"/>
+</kw>
+<kw name="Verify Please enter text to search is visible" library="automation-tabs">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Please enter text to search.</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231226 09:49:22.419" level="INFO">Current page contains text 'Please enter text to search.'.</msg>
+<status status="PASS" starttime="20231226 09:49:22.409" endtime="20231226 09:49:22.419"/>
+</kw>
+<status status="PASS" starttime="20231226 09:49:22.408" endtime="20231226 09:49:22.419"/>
+</kw>
+<kw name="Search with ${anime_name}" library="automation-tabs" sourcename="Search with ${data}">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${path_search_input}</arg>
+<arg>${data}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231226 09:49:22.420" level="INFO">Typing text 'Dragon Ball' into text field 'xpath://*[@id="Wikipedia1_wikipedia-search-input"]'.</msg>
+<status status="PASS" starttime="20231226 09:49:22.419" endtime="20231226 09:49:22.479"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_search}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231226 09:49:22.479" level="INFO">Clicking element 'xpath://*[@id="Wikipedia1_wikipedia-search-form"]/div/span[2]/span[2]/input'.</msg>
+<status status="PASS" starttime="20231226 09:49:22.479" endtime="20231226 09:49:22.516"/>
+</kw>
+<status status="PASS" starttime="20231226 09:49:22.419" endtime="20231226 09:49:22.516"/>
+</kw>
+<kw name="Verify search result of ${anime_name} is visible" library="automation-tabs" sourcename="Verify search result of ${data} is visible">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${path_search_result}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231226 09:49:22.517" endtime="20231226 09:49:22.535"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${path_search_result}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231226 09:49:22.546" level="INFO">Element 'xpath://*[@id="Wikipedia1_wikipedia-search-results"]' is displayed.</msg>
+<status status="PASS" starttime="20231226 09:49:22.536" endtime="20231226 09:49:22.546"/>
+</kw>
+<status status="PASS" starttime="20231226 09:49:22.516" endtime="20231226 09:49:22.546"/>
+</kw>
+<status status="PASS" starttime="20231226 09:49:22.275" endtime="20231226 09:49:22.546"/>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231226 09:49:22.547" endtime="20231226 09:49:24.618"/>
+</kw>
+<status status="PASS" starttime="20231226 09:49:15.700" endtime="20231226 09:49:24.618"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Automation-Testing-Practice">Automation-Testing-Practice</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
