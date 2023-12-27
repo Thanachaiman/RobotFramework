@@ -1,95 +1,1098 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.3 on win32)" generated="20231226 09:49:15.697" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.11.3 on win32)" generated="20231227 13:26:52.222" rpa="false" schemaversion="4">
 <suite id="s1" name="Automation-Testing-Practice" source="D:\Robot_framework\Testsuites\Automation-Testing-Practice\Automation-Testing-Practice.robot">
 <kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
 <arg>url=${global_url}</arg>
 <arg>browser=${default_browser}</arg>
 <arg>options=add_argument("--headless")</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231226 09:49:15.997" level="INFO">Opening browser 'chrome' to base url 'https://testautomationpractice.blogspot.com/'.</msg>
-<status status="PASS" starttime="20231226 09:49:15.995" endtime="20231226 09:49:22.275"/>
+<msg timestamp="20231227 13:26:52.526" level="INFO">Opening browser 'chrome' to base url 'https://testautomationpractice.blogspot.com/'.</msg>
+<status status="PASS" starttime="20231227 13:26:52.526" endtime="20231227 13:26:57.818"/>
 </kw>
-<test id="s1-t1" name="Verify Data In Tabs" line="54">
-<kw name="Verify that page is visible successfully" library="automation-testing-practice">
+<test id="s1-t1" name="Verify that the website is working properly." line="21">
+<kw name="Verify that the page is successfully visible." library="automation-testing-practice">
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <arg>${path_txt_title}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20231226 09:49:22.295" level="INFO">Element 'xpath://*[@id="header-inner"]/div[1]/h1' is displayed.</msg>
-<status status="PASS" starttime="20231226 09:49:22.276" endtime="20231226 09:49:22.295"/>
+<msg timestamp="20231227 13:26:57.839" level="INFO">Element 'xpath://*[@id="header-inner"]/div[1]/h1' is displayed.</msg>
+<status status="PASS" starttime="20231227 13:26:57.820" endtime="20231227 13:26:57.839"/>
 </kw>
-<status status="PASS" starttime="20231226 09:49:22.275" endtime="20231226 09:49:22.295"/>
+<status status="PASS" starttime="20231227 13:26:57.820" endtime="20231227 13:26:57.839"/>
+</kw>
+<kw name="Enter name with ${user_data}[name]" library="automation-testing-practice" sourcename="Enter name with ${name}">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${default_web_path}[name]</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231227 13:26:57.840" level="INFO">Typing text 'thanachai' into text field 'xpath://*[@id="name"]'.</msg>
+<status status="PASS" starttime="20231227 13:26:57.840" endtime="20231227 13:26:57.921"/>
+</kw>
+<status status="PASS" starttime="20231227 13:26:57.839" endtime="20231227 13:26:57.921"/>
+</kw>
+<kw name="Verify name is ${user_data}[name]" library="automation-testing-practice" sourcename="Verify name is ${name}">
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${actual_text}</var>
+<arg>${default_web_path}[name]</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20231227 13:26:57.935" level="INFO">${actual_text} = thanachai</msg>
+<status status="PASS" starttime="20231227 13:26:57.921" endtime="20231227 13:26:57.935"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${actual_text}</arg>
+<arg>${name}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20231227 13:26:57.935" endtime="20231227 13:26:57.937"/>
+</kw>
+<status status="PASS" starttime="20231227 13:26:57.921" endtime="20231227 13:26:57.937"/>
+</kw>
+<kw name="Enter email with ${user_data}[email]" library="automation-testing-practice" sourcename="Enter email with ${email}">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${default_web_path}[email]</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231227 13:26:57.937" level="INFO">Typing text 'tang@gmail.comtangkung' into text field 'xpath://*[@id="email"]'.</msg>
+<status status="PASS" starttime="20231227 13:26:57.937" endtime="20231227 13:26:58.015"/>
+</kw>
+<status status="PASS" starttime="20231227 13:26:57.937" endtime="20231227 13:26:58.015"/>
+</kw>
+<kw name="Verify email is ${user_data}[email]" library="automation-testing-practice" sourcename="Verify email is ${email}">
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${actual_text}</var>
+<arg>${default_web_path}[email]</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20231227 13:26:58.032" level="INFO">${actual_text} = tang@gmail.comtangkung</msg>
+<status status="PASS" starttime="20231227 13:26:58.016" endtime="20231227 13:26:58.032"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${actual_text}</arg>
+<arg>${email}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20231227 13:26:58.033" endtime="20231227 13:26:58.033"/>
+</kw>
+<status status="PASS" starttime="20231227 13:26:58.015" endtime="20231227 13:26:58.033"/>
+</kw>
+<kw name="Enter phone with ${user_data}[phone]" library="automation-testing-practice" sourcename="Enter phone with ${phone}">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${default_web_path}[phone]</arg>
+<arg>${phone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231227 13:26:58.034" level="INFO">Typing text '0829269788' into text field 'xpath://*[@id="phone"]'.</msg>
+<status status="PASS" starttime="20231227 13:26:58.033" endtime="20231227 13:26:58.111"/>
+</kw>
+<status status="PASS" starttime="20231227 13:26:58.033" endtime="20231227 13:26:58.111"/>
+</kw>
+<kw name="Verify phone is ${user_data}[phone]" library="automation-testing-practice" sourcename="Verify phone is ${phone}">
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${actual_text}</var>
+<arg>${default_web_path}[phone]</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20231227 13:26:58.125" level="INFO">${actual_text} = 0829269788</msg>
+<status status="PASS" starttime="20231227 13:26:58.111" endtime="20231227 13:26:58.125"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${actual_text}</arg>
+<arg>${phone}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20231227 13:26:58.125" endtime="20231227 13:26:58.127"/>
+</kw>
+<status status="PASS" starttime="20231227 13:26:58.111" endtime="20231227 13:26:58.127"/>
+</kw>
+<kw name="Enter address with ${user_data}[address]" library="automation-testing-practice" sourcename="Enter address with ${address}">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${default_web_path}[address]</arg>
+<arg>${address}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231227 13:26:58.127" level="INFO">Typing text '30/1 phaholyothin jatujak 30000' into text field 'xpath://*[@id="textarea"]'.</msg>
+<status status="PASS" starttime="20231227 13:26:58.127" endtime="20231227 13:26:58.204"/>
+</kw>
+<status status="PASS" starttime="20231227 13:26:58.127" endtime="20231227 13:26:58.206"/>
+</kw>
+<kw name="Verify address is ${user_data}[address]" library="automation-testing-practice" sourcename="Verify address is ${address}">
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${actual_text}</var>
+<arg>${default_web_path}[address]</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20231227 13:26:58.218" level="INFO">${actual_text} = 30/1 phaholyothin jatujak 30000</msg>
+<status status="PASS" starttime="20231227 13:26:58.206" endtime="20231227 13:26:58.220"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${actual_text}</arg>
+<arg>${address}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20231227 13:26:58.220" endtime="20231227 13:26:58.220"/>
+</kw>
+<status status="PASS" starttime="20231227 13:26:58.206" endtime="20231227 13:26:58.220"/>
+</kw>
+<kw name="Select gender with ${user_data}[gender(male)]" library="automation-testing-practice" sourcename="Select gender with ${gender}">
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>${group_gender}</arg>
+<arg>${gender}</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20231227 13:26:58.221" level="INFO">Selecting 'male' from radio button 'gender'.</msg>
+<status status="PASS" starttime="20231227 13:26:58.221" endtime="20231227 13:26:58.274"/>
+</kw>
+<status status="PASS" starttime="20231227 13:26:58.220" endtime="20231227 13:26:58.274"/>
+</kw>
+<kw name="Verify ${user_data}[gender(male)] is selected" library="automation-testing-practice" sourcename="Verify ${gender} is selected">
+<kw name="Radio Button Should Be Set To" library="SeleniumLibrary">
+<arg>${group_gender}</arg>
+<arg>${gender}</arg>
+<doc>Verifies radio button group ``group_name`` is set to ``value``.</doc>
+<msg timestamp="20231227 13:26:58.276" level="INFO">Verifying radio button 'gender' has selection 'male'.</msg>
+<status status="PASS" starttime="20231227 13:26:58.276" endtime="20231227 13:26:58.302"/>
+</kw>
+<status status="PASS" starttime="20231227 13:26:58.274" endtime="20231227 13:26:58.302"/>
+</kw>
+<kw name="Select check days with @{days}" library="automation-testing-practice">
+<for flavor="IN">
+<var>${day}</var>
+<value>@{days}</value>
+<iter>
+<var name="${day}">monday</var>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>xpath://*[@id="${day}"]</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20231227 13:26:58.303" level="INFO">Selecting checkbox 'xpath://*[@id="monday"]'.</msg>
+<status status="PASS" starttime="20231227 13:26:58.303" endtime="20231227 13:26:58.365"/>
+</kw>
+<status status="PASS" starttime="20231227 13:26:58.303" endtime="20231227 13:26:58.365"/>
+</iter>
+<iter>
+<var name="${day}">tuesday</var>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>xpath://*[@id="${day}"]</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20231227 13:26:58.366" level="INFO">Selecting checkbox 'xpath://*[@id="tuesday"]'.</msg>
+<status status="PASS" starttime="20231227 13:26:58.365" endtime="20231227 13:26:58.425"/>
+</kw>
+<status status="PASS" starttime="20231227 13:26:58.365" endtime="20231227 13:26:58.425"/>
+</iter>
+<status status="PASS" starttime="20231227 13:26:58.302" endtime="20231227 13:26:58.425"/>
+</for>
+<status status="PASS" starttime="20231227 13:26:58.302" endtime="20231227 13:26:58.425"/>
+</kw>
+<kw name="Verify checkbox should be selected @{days}" library="automation-testing-practice">
+<for flavor="IN">
+<var>${day}</var>
+<value>@{days}</value>
+<iter>
+<var name="${day}">monday</var>
+<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
+<arg>xpath://*[@id="${day}"]</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<msg timestamp="20231227 13:26:58.426" level="INFO">Verifying checkbox 'xpath://*[@id="monday"]' is selected.</msg>
+<status status="PASS" starttime="20231227 13:26:58.426" endtime="20231227 13:26:58.446"/>
+</kw>
+<status status="PASS" starttime="20231227 13:26:58.426" endtime="20231227 13:26:58.446"/>
+</iter>
+<iter>
+<var name="${day}">tuesday</var>
+<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
+<arg>xpath://*[@id="${day}"]</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<msg timestamp="20231227 13:26:58.446" level="INFO">Verifying checkbox 'xpath://*[@id="tuesday"]' is selected.</msg>
+<status status="PASS" starttime="20231227 13:26:58.446" endtime="20231227 13:26:58.468"/>
+</kw>
+<status status="PASS" starttime="20231227 13:26:58.446" endtime="20231227 13:26:58.468"/>
+</iter>
+<status status="PASS" starttime="20231227 13:26:58.426" endtime="20231227 13:26:58.468"/>
+</for>
+<status status="PASS" starttime="20231227 13:26:58.425" endtime="20231227 13:26:58.468"/>
+</kw>
+<kw name="Select country with ${country}" library="automation-testing-practice" sourcename="Select country with ${country}">
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${path_drop_down_country}</arg>
+<arg>${country}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20231227 13:26:58.469" level="INFO">Selecting options from selection list 'xpath://*[@id="country"]' by value canada.</msg>
+<status status="PASS" starttime="20231227 13:26:58.469" endtime="20231227 13:26:58.522"/>
+</kw>
+<status status="PASS" starttime="20231227 13:26:58.468" endtime="20231227 13:26:58.522"/>
+</kw>
+<kw name="Verify selected country is ${country}" library="automation-testing-practice" sourcename="Verify selected country is ${country}">
+<kw name="List Selection Should Be" library="SeleniumLibrary">
+<arg>${path_drop_down_country}</arg>
+<arg>${country}</arg>
+<doc>Verifies selection list ``locator`` has ``expected`` options selected.</doc>
+<msg timestamp="20231227 13:26:58.523" level="INFO">Verifying list 'xpath://*[@id="country"]' has option [ canada ] selected.</msg>
+<msg timestamp="20231227 13:26:58.534" level="INFO">Current page contains list 'xpath://*[@id="country"]'.</msg>
+<status status="PASS" starttime="20231227 13:26:58.523" endtime="20231227 13:26:58.624"/>
+</kw>
+<status status="PASS" starttime="20231227 13:26:58.522" endtime="20231227 13:26:58.624"/>
+</kw>
+<kw name="Select color with ${color}" library="automation-testing-practice" sourcename="Select color with ${color}">
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${path_color_option}</arg>
+<arg>${color}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20231227 13:26:58.625" level="INFO">Selecting options from selection list 'xpath://*[@id="colors"]' by value red.</msg>
+<status status="PASS" starttime="20231227 13:26:58.625" endtime="20231227 13:26:58.684"/>
+</kw>
+<status status="PASS" starttime="20231227 13:26:58.624" endtime="20231227 13:26:58.684"/>
+</kw>
+<kw name="Verify selected color is ${color}" library="automation-testing-practice" sourcename="Verify selected color is ${color}">
+<kw name="List Selection Should Be" library="SeleniumLibrary">
+<arg>${path_color_option}</arg>
+<arg>${color}</arg>
+<doc>Verifies selection list ``locator`` has ``expected`` options selected.</doc>
+<msg timestamp="20231227 13:26:58.685" level="INFO">Verifying list 'xpath://*[@id="colors"]' has option [ red ] selected.</msg>
+<msg timestamp="20231227 13:26:58.695" level="INFO">Current page contains list 'xpath://*[@id="colors"]'.</msg>
+<status status="PASS" starttime="20231227 13:26:58.684" endtime="20231227 13:26:58.755"/>
+</kw>
+<status status="PASS" starttime="20231227 13:26:58.684" endtime="20231227 13:26:58.755"/>
+</kw>
+<kw name="Enter date with ${date}" library="automation-testing-practice" sourcename="Enter date with ${date}">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${path_date_selecter}</arg>
+<arg>${date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231227 13:26:58.756" level="INFO">Typing text '01/01/2001' into text field 'xpath://*[@id="datepicker"]'.</msg>
+<status status="PASS" starttime="20231227 13:26:58.756" endtime="20231227 13:26:58.841"/>
+</kw>
+<status status="PASS" starttime="20231227 13:26:58.756" endtime="20231227 13:26:58.841"/>
+</kw>
+<kw name="Verify date is ${date}" library="automation-testing-practice" sourcename="Verify date is ${date}">
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${actual_text}</var>
+<arg>${path_date_selecter}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20231227 13:26:58.856" level="INFO">${actual_text} = 01/01/2001</msg>
+<status status="PASS" starttime="20231227 13:26:58.842" endtime="20231227 13:26:58.856"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${actual_text}</arg>
+<arg>${date}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20231227 13:26:58.856" endtime="20231227 13:26:58.856"/>
+</kw>
+<status status="PASS" starttime="20231227 13:26:58.842" endtime="20231227 13:26:58.856"/>
+</kw>
+<kw name="Click link open cart" library="automation-testing-practice">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${path_open_cart_hyperlink}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 13:26:58.856" level="INFO">Clicking element 'xpath://*[@id="post-body-1307673142697428135"]/a[1]'.</msg>
+<status status="PASS" starttime="20231227 13:26:58.856" endtime="20231227 13:26:59.771"/>
+</kw>
+<status status="PASS" starttime="20231227 13:26:58.856" endtime="20231227 13:26:59.771"/>
+</kw>
+<kw name="Verify url open cart" library="automation-testing-practice">
+<kw name="Location Should Be" library="SeleniumLibrary">
+<arg>https://demo.opencart.com/</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<msg timestamp="20231227 13:26:59.775" level="INFO">Current location is 'https://demo.opencart.com/'.</msg>
+<status status="PASS" starttime="20231227 13:26:59.772" endtime="20231227 13:26:59.775"/>
+</kw>
+<status status="PASS" starttime="20231227 13:26:59.771" endtime="20231227 13:26:59.775"/>
+</kw>
+<kw name="Go Back" library="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" starttime="20231227 13:26:59.775" endtime="20231227 13:27:01.904"/>
+</kw>
+<kw name="Verify that the page is successfully visible." library="automation-testing-practice">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${path_txt_title}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231227 13:27:01.926" level="INFO">Element 'xpath://*[@id="header-inner"]/div[1]/h1' is displayed.</msg>
+<status status="PASS" starttime="20231227 13:27:01.905" endtime="20231227 13:27:01.927"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:01.905" endtime="20231227 13:27:01.927"/>
+</kw>
+<kw name="Click link orange HRM" library="automation-testing-practice">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${path_open_cart_hyperlink}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 13:27:01.927" level="INFO">Clicking element 'xpath://*[@id="post-body-1307673142697428135"]/a[1]'.</msg>
+<status status="PASS" starttime="20231227 13:27:01.927" endtime="20231227 13:27:02.279"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:01.927" endtime="20231227 13:27:02.279"/>
+</kw>
+<kw name="Verify url orange HRM" library="automation-testing-practice">
+<kw name="Location Should Be" library="SeleniumLibrary">
+<arg>https://demo.opencart.com/</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<msg timestamp="20231227 13:27:02.284" level="INFO">Current location is 'https://demo.opencart.com/'.</msg>
+<status status="PASS" starttime="20231227 13:27:02.280" endtime="20231227 13:27:02.284"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:02.280" endtime="20231227 13:27:02.284"/>
+</kw>
+<kw name="Go Back" library="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" starttime="20231227 13:27:02.284" endtime="20231227 13:27:04.490"/>
+</kw>
+<kw name="Verify that the page is successfully visible." library="automation-testing-practice">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${path_txt_title}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231227 13:27:04.508" level="INFO">Element 'xpath://*[@id="header-inner"]/div[1]/h1' is displayed.</msg>
+<status status="PASS" starttime="20231227 13:27:04.491" endtime="20231227 13:27:04.508"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:04.490" endtime="20231227 13:27:04.508"/>
+</kw>
+<kw name="Click hyperlink home" library="automation-testing-practice">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${path_home_hyperlink}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 13:27:04.509" level="INFO">Clicking element 'xpath://*[@id="blog-pager"]/a'.</msg>
+<status status="PASS" starttime="20231227 13:27:04.509" endtime="20231227 13:27:07.038"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:04.509" endtime="20231227 13:27:07.038"/>
+</kw>
+<kw name="Verify data is clear" library="automation-testing-practice">
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${actual_text}</var>
+<arg>${default_web_path}[name]</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20231227 13:27:07.056" level="INFO">${actual_text} = </msg>
+<status status="PASS" starttime="20231227 13:27:07.039" endtime="20231227 13:27:07.056"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${actual_text}</arg>
+<arg>${EMPTY}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20231227 13:27:07.056" endtime="20231227 13:27:07.056"/>
+</kw>
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${actual_text}</var>
+<arg>${path_date_selecter}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20231227 13:27:07.070" level="INFO">${actual_text} = </msg>
+<status status="PASS" starttime="20231227 13:27:07.056" endtime="20231227 13:27:07.070"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${actual_text}</arg>
+<arg>${EMPTY}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20231227 13:27:07.070" endtime="20231227 13:27:07.071"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:07.039" endtime="20231227 13:27:07.071"/>
+</kw>
+<status status="PASS" starttime="20231227 13:26:57.818" endtime="20231227 13:27:07.071"/>
+</test>
+<test id="s1-t2" name="Verify that the Pagination is working properly." line="52">
+<kw name="Verify that the page is successfully visible." library="automation-testing-practice">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${path_txt_title}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231227 13:27:07.087" level="INFO">Element 'xpath://*[@id="header-inner"]/div[1]/h1' is displayed.</msg>
+<status status="PASS" starttime="20231227 13:27:07.072" endtime="20231227 13:27:07.087"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:07.072" endtime="20231227 13:27:07.087"/>
+</kw>
+<kw name="Verify pageination is default" library="automation-pagination">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Product 1</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231227 13:27:07.103" level="INFO">Current page contains text 'Product 1'.</msg>
+<status status="PASS" starttime="20231227 13:27:07.088" endtime="20231227 13:27:07.103"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${path_pagination_page1}\[contains(@class, "active")]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20231227 13:27:07.103" endtime="20231227 13:27:07.113"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:07.088" endtime="20231227 13:27:07.113"/>
+</kw>
+<kw name="Chage pagination to page ${number_of_page}" library="automation-pagination" sourcename="Chage pagination to page ${number_of_page}">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://*[@id="pagination"]/li[${number_of_page}]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 13:27:07.114" level="INFO">Clicking element 'xpath://*[@id="pagination"]/li[3]/a'.</msg>
+<status status="PASS" starttime="20231227 13:27:07.114" endtime="20231227 13:27:07.155"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:07.114" endtime="20231227 13:27:07.155"/>
+</kw>
+<kw name="Verify pagination is page ${number_of_page}" library="automation-pagination" sourcename="Verify pagination is page ${number_of_page}">
+<kw name="Set Variable" library="BuiltIn">
+<var>${number1}</var>
+<arg>5</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231227 13:27:07.156" level="INFO">${number1} = 5</msg>
+<status status="PASS" starttime="20231227 13:27:07.156" endtime="20231227 13:27:07.156"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${result}</var>
+<arg>${number_of_page} * ${number1}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231227 13:27:07.157" level="INFO">${result} = 15</msg>
+<status status="PASS" starttime="20231227 13:27:07.156" endtime="20231227 13:27:07.157"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Product ${result}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231227 13:27:07.169" level="INFO">Current page contains text 'Product 15'.</msg>
+<status status="PASS" starttime="20231227 13:27:07.157" endtime="20231227 13:27:07.169"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:07.155" endtime="20231227 13:27:07.169"/>
+</kw>
+<kw name="Select check box @{check_box} of page ${number_of_page}" library="automation-pagination" sourcename="Select check box @{check_box} of page ${page}">
+<for flavor="IN">
+<var>${check_box_number}</var>
+<value>@{check_box}</value>
+<iter>
+<var name="${check_box_number}">1</var>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://*[@id="productTable"]/tbody/tr[${check_box_number}]/td[4]/input</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 13:27:07.170" level="INFO">Clicking element 'xpath://*[@id="productTable"]/tbody/tr[1]/td[4]/input'.</msg>
+<status status="PASS" starttime="20231227 13:27:07.170" endtime="20231227 13:27:07.204"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:07.170" endtime="20231227 13:27:07.204"/>
+</iter>
+<iter>
+<var name="${check_box_number}">3</var>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://*[@id="productTable"]/tbody/tr[${check_box_number}]/td[4]/input</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 13:27:07.205" level="INFO">Clicking element 'xpath://*[@id="productTable"]/tbody/tr[3]/td[4]/input'.</msg>
+<status status="PASS" starttime="20231227 13:27:07.204" endtime="20231227 13:27:07.243"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:07.204" endtime="20231227 13:27:07.243"/>
+</iter>
+<status status="PASS" starttime="20231227 13:27:07.170" endtime="20231227 13:27:07.244"/>
+</for>
+<status status="PASS" starttime="20231227 13:27:07.169" endtime="20231227 13:27:07.244"/>
+</kw>
+<kw name="Verify check box @{check_box} of page ${number_of_page} should selected" library="automation-pagination" sourcename="Verify check box @{check_box} of page ${page} should selected">
+<for flavor="IN">
+<var>${check_box_number}</var>
+<value>@{check_box}</value>
+<iter>
+<var name="${check_box_number}">1</var>
+<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
+<arg>xpath://*[@id="productTable"]/tbody/tr[${check_box_number}]/td[4]/input</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<msg timestamp="20231227 13:27:07.245" level="INFO">Verifying checkbox 'xpath://*[@id="productTable"]/tbody/tr[1]/td[4]/input' is selected.</msg>
+<status status="PASS" starttime="20231227 13:27:07.244" endtime="20231227 13:27:07.271"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:07.244" endtime="20231227 13:27:07.271"/>
+</iter>
+<iter>
+<var name="${check_box_number}">3</var>
+<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
+<arg>xpath://*[@id="productTable"]/tbody/tr[${check_box_number}]/td[4]/input</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<msg timestamp="20231227 13:27:07.272" level="INFO">Verifying checkbox 'xpath://*[@id="productTable"]/tbody/tr[3]/td[4]/input' is selected.</msg>
+<status status="PASS" starttime="20231227 13:27:07.271" endtime="20231227 13:27:07.301"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:07.271" endtime="20231227 13:27:07.301"/>
+</iter>
+<status status="PASS" starttime="20231227 13:27:07.244" endtime="20231227 13:27:07.301"/>
+</for>
+<status status="PASS" starttime="20231227 13:27:07.244" endtime="20231227 13:27:07.301"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:07.072" endtime="20231227 13:27:07.301"/>
+</test>
+<test id="s1-t3" name="Verify that the Search Bar is working properly." line="60">
+<kw name="Verify that the page is successfully visible." library="automation-testing-practice">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${path_txt_title}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231227 13:27:07.319" level="INFO">Element 'xpath://*[@id="header-inner"]/div[1]/h1' is displayed.</msg>
+<status status="PASS" starttime="20231227 13:27:07.304" endtime="20231227 13:27:07.319"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:07.303" endtime="20231227 13:27:07.319"/>
 </kw>
 <kw name="Search with ${empty_data}" library="automation-tabs" sourcename="Search with ${data}">
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${path_search_input}</arg>
 <arg>${data}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231226 09:49:22.296" level="INFO">Typing text '' into text field 'xpath://*[@id="Wikipedia1_wikipedia-search-input"]'.</msg>
-<status status="PASS" starttime="20231226 09:49:22.296" endtime="20231226 09:49:22.368"/>
+<msg timestamp="20231227 13:27:07.322" level="INFO">Typing text '' into text field 'xpath://*[@id="Wikipedia1_wikipedia-search-input"]'.</msg>
+<status status="PASS" starttime="20231227 13:27:07.321" endtime="20231227 13:27:07.392"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${btn_search}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231226 09:49:22.369" level="INFO">Clicking element 'xpath://*[@id="Wikipedia1_wikipedia-search-form"]/div/span[2]/span[2]/input'.</msg>
-<status status="PASS" starttime="20231226 09:49:22.368" endtime="20231226 09:49:22.408"/>
+<msg timestamp="20231227 13:27:07.393" level="INFO">Clicking element 'xpath://*[@id="Wikipedia1_wikipedia-search-form"]/div/span[2]/span[2]/input'.</msg>
+<status status="PASS" starttime="20231227 13:27:07.392" endtime="20231227 13:27:07.434"/>
 </kw>
-<status status="PASS" starttime="20231226 09:49:22.295" endtime="20231226 09:49:22.408"/>
+<status status="PASS" starttime="20231227 13:27:07.321" endtime="20231227 13:27:07.434"/>
 </kw>
 <kw name="Verify Please enter text to search is visible" library="automation-tabs">
 <kw name="Page Should Contain" library="SeleniumLibrary">
 <arg>Please enter text to search.</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20231226 09:49:22.419" level="INFO">Current page contains text 'Please enter text to search.'.</msg>
-<status status="PASS" starttime="20231226 09:49:22.409" endtime="20231226 09:49:22.419"/>
+<msg timestamp="20231227 13:27:07.446" level="INFO">Current page contains text 'Please enter text to search.'.</msg>
+<status status="PASS" starttime="20231227 13:27:07.434" endtime="20231227 13:27:07.446"/>
 </kw>
-<status status="PASS" starttime="20231226 09:49:22.408" endtime="20231226 09:49:22.419"/>
+<status status="PASS" starttime="20231227 13:27:07.434" endtime="20231227 13:27:07.446"/>
 </kw>
 <kw name="Search with ${anime_name}" library="automation-tabs" sourcename="Search with ${data}">
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${path_search_input}</arg>
 <arg>${data}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231226 09:49:22.420" level="INFO">Typing text 'Dragon Ball' into text field 'xpath://*[@id="Wikipedia1_wikipedia-search-input"]'.</msg>
-<status status="PASS" starttime="20231226 09:49:22.419" endtime="20231226 09:49:22.479"/>
+<msg timestamp="20231227 13:27:07.447" level="INFO">Typing text 'Dragon Ball' into text field 'xpath://*[@id="Wikipedia1_wikipedia-search-input"]'.</msg>
+<status status="PASS" starttime="20231227 13:27:07.447" endtime="20231227 13:27:07.505"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${btn_search}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231226 09:49:22.479" level="INFO">Clicking element 'xpath://*[@id="Wikipedia1_wikipedia-search-form"]/div/span[2]/span[2]/input'.</msg>
-<status status="PASS" starttime="20231226 09:49:22.479" endtime="20231226 09:49:22.516"/>
+<msg timestamp="20231227 13:27:07.506" level="INFO">Clicking element 'xpath://*[@id="Wikipedia1_wikipedia-search-form"]/div/span[2]/span[2]/input'.</msg>
+<status status="PASS" starttime="20231227 13:27:07.506" endtime="20231227 13:27:07.542"/>
 </kw>
-<status status="PASS" starttime="20231226 09:49:22.419" endtime="20231226 09:49:22.516"/>
+<status status="PASS" starttime="20231227 13:27:07.446" endtime="20231227 13:27:07.542"/>
 </kw>
-<kw name="Verify search result of ${anime_name} is visible" library="automation-tabs" sourcename="Verify search result of ${data} is visible">
+<kw name="Verify search result of search is visible" library="automation-tabs">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${path_search_result}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231226 09:49:22.517" endtime="20231226 09:49:22.535"/>
+<status status="PASS" starttime="20231227 13:27:07.543" endtime="20231227 13:27:07.558"/>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <arg>${path_search_result}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20231226 09:49:22.546" level="INFO">Element 'xpath://*[@id="Wikipedia1_wikipedia-search-results"]' is displayed.</msg>
-<status status="PASS" starttime="20231226 09:49:22.536" endtime="20231226 09:49:22.546"/>
+<msg timestamp="20231227 13:27:07.570" level="INFO">Element 'xpath://*[@id="Wikipedia1_wikipedia-search-results"]' is displayed.</msg>
+<status status="PASS" starttime="20231227 13:27:07.558" endtime="20231227 13:27:07.570"/>
 </kw>
-<status status="PASS" starttime="20231226 09:49:22.516" endtime="20231226 09:49:22.546"/>
+<status status="PASS" starttime="20231227 13:27:07.542" endtime="20231227 13:27:07.570"/>
 </kw>
-<status status="PASS" starttime="20231226 09:49:22.275" endtime="20231226 09:49:22.546"/>
+<status status="PASS" starttime="20231227 13:27:07.303" endtime="20231227 13:27:07.570"/>
+</test>
+<test id="s1-t4" name="Verify New Browser Window is working properly." line="67">
+<kw name="Verify that the page is successfully visible." library="automation-testing-practice">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${path_txt_title}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231227 13:27:07.584" level="INFO">Element 'xpath://*[@id="header-inner"]/div[1]/h1' is displayed.</msg>
+<status status="PASS" starttime="20231227 13:27:07.571" endtime="20231227 13:27:07.584"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:07.571" endtime="20231227 13:27:07.584"/>
+</kw>
+<kw name="Click New Windows Browser button" library="automation-new-windows">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_new_browser_window}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 13:27:07.585" level="INFO">Clicking element 'xpath://*[@id="HTML4"]/div[1]/button'.</msg>
+<status status="PASS" starttime="20231227 13:27:07.585" endtime="20231227 13:27:07.624"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 13:27:10.626" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231227 13:27:07.624" endtime="20231227 13:27:10.626"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:07.584" endtime="20231227 13:27:10.626"/>
+</kw>
+<kw name="Verify New Browser Is Opened" library="automation-new-windows">
+<kw name="Get Window Handles" library="SeleniumLibrary">
+<var>${handles}</var>
+<doc>Returns all child window handles of the selected browser as a list.</doc>
+<msg timestamp="20231227 13:27:10.629" level="INFO">${handles} = ['B666C4C95F6B27E21481CB8748C53A4F', '1FB9DCB6705A0B56D5DB8496B9B71489']</msg>
+<status status="PASS" starttime="20231227 13:27:10.626" endtime="20231227 13:27:10.629"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new_window}</var>
+<arg>${handles}[1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231227 13:27:10.631" level="INFO">${new_window} = 1FB9DCB6705A0B56D5DB8496B9B71489</msg>
+<status status="PASS" starttime="20231227 13:27:10.629" endtime="20231227 13:27:10.631"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>${new_window}</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20231227 13:27:10.631" endtime="20231227 13:27:10.646"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${path_img_element}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20231227 13:27:10.646" endtime="20231227 13:27:10.657"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${path_img_element}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20231227 13:27:10.663" level="INFO">Current page contains element 'xpath://*[@id="logo"]/a/img'.</msg>
+<status status="PASS" starttime="20231227 13:27:10.657" endtime="20231227 13:27:10.663"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:10.626" endtime="20231227 13:27:10.663"/>
+</kw>
+<kw name="Switch browser to browser ${browser_number}" library="automation-new-windows" sourcename="Switch browser to browser ${browser_number}">
+<kw name="Get Window Handles" library="SeleniumLibrary">
+<var>${handles}</var>
+<doc>Returns all child window handles of the selected browser as a list.</doc>
+<msg timestamp="20231227 13:27:10.665" level="INFO">${handles} = ['B666C4C95F6B27E21481CB8748C53A4F', '1FB9DCB6705A0B56D5DB8496B9B71489']</msg>
+<status status="PASS" starttime="20231227 13:27:10.664" endtime="20231227 13:27:10.665"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new_window}</var>
+<arg>${handles}[${browser_number}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231227 13:27:10.665" level="INFO">${new_window} = B666C4C95F6B27E21481CB8748C53A4F</msg>
+<status status="PASS" starttime="20231227 13:27:10.665" endtime="20231227 13:27:10.665"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>${new_window}</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20231227 13:27:10.665" endtime="20231227 13:27:10.670"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:10.664" endtime="20231227 13:27:10.670"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:07.571" endtime="20231227 13:27:10.670"/>
+</test>
+<test id="s1-t5" name="Verify JS Alerts is working properly." line="73">
+<kw name="Verify that the page is successfully visible." library="automation-testing-practice">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${path_txt_title}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231227 13:27:10.683" level="INFO">Element 'xpath://*[@id="header-inner"]/div[1]/h1' is displayed.</msg>
+<status status="PASS" starttime="20231227 13:27:10.671" endtime="20231227 13:27:10.684"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:10.671" endtime="20231227 13:27:10.684"/>
+</kw>
+<kw name="Click Alert Button" library="automation-alerts">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_alert}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 13:27:10.684" level="INFO">Clicking element 'xpath://*[@id="HTML9"]/div[1]/button[1]'.</msg>
+<status status="PASS" starttime="20231227 13:27:10.684" endtime="20231227 13:27:10.719"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:10.684" endtime="20231227 13:27:10.720"/>
+</kw>
+<kw name="Verify Alert Should Be Present" library="automation-alerts">
+<kw name="Alert Should Be Present" library="SeleniumLibrary">
+<arg>I am an alert box!</arg>
+<doc>Verifies that an alert is present and by default, accepts it.</doc>
+<msg timestamp="20231227 13:27:10.720" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<status status="PASS" starttime="20231227 13:27:10.720" endtime="20231227 13:27:10.723"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:10.720" endtime="20231227 13:27:10.723"/>
+</kw>
+<kw name="Click Confirm Box Button" library="automation-alerts">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_confirm_box}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 13:27:10.724" level="INFO">Clicking element 'xpath://*[@id="HTML9"]/div[1]/button[2]'.</msg>
+<status status="PASS" starttime="20231227 13:27:10.724" endtime="20231227 13:27:10.757"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:10.724" endtime="20231227 13:27:10.757"/>
+</kw>
+<kw name="Click Confirm In Alert" library="automation-alerts">
+<kw name="Handle Alert" library="SeleniumLibrary">
+<arg>accept</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<msg timestamp="20231227 13:27:10.759" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<status status="PASS" starttime="20231227 13:27:10.759" endtime="20231227 13:27:10.761"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:10.757" endtime="20231227 13:27:10.761"/>
+</kw>
+<kw name="Verify Text You pressed OK! should be visible" library="automation-alerts">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${path_txt_alert}</arg>
+<arg>You pressed OK!</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20231227 13:27:10.777" level="INFO">Element 'xpath://*[@id="demo"]' contains text 'You pressed OK!'.</msg>
+<status status="PASS" starttime="20231227 13:27:10.761" endtime="20231227 13:27:10.777"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:10.761" endtime="20231227 13:27:10.777"/>
+</kw>
+<kw name="Click Confirm Box Button" library="automation-alerts">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_confirm_box}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 13:27:10.778" level="INFO">Clicking element 'xpath://*[@id="HTML9"]/div[1]/button[2]'.</msg>
+<status status="PASS" starttime="20231227 13:27:10.777" endtime="20231227 13:27:10.804"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:10.777" endtime="20231227 13:27:10.804"/>
+</kw>
+<kw name="Click Dismiss In Alert" library="automation-alerts">
+<kw name="Handle Alert" library="SeleniumLibrary">
+<arg>action=DISMISS</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<msg timestamp="20231227 13:27:10.805" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<status status="PASS" starttime="20231227 13:27:10.804" endtime="20231227 13:27:10.807"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:10.804" endtime="20231227 13:27:10.807"/>
+</kw>
+<kw name="Verify Text You pressed Cancel! should be visible" library="automation-alerts">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${path_txt_alert}</arg>
+<arg>You pressed Cancel!</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20231227 13:27:10.820" level="INFO">Element 'xpath://*[@id="demo"]' contains text 'You pressed Cancel!'.</msg>
+<status status="PASS" starttime="20231227 13:27:10.807" endtime="20231227 13:27:10.820"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:10.807" endtime="20231227 13:27:10.820"/>
+</kw>
+<kw name="Click Prompt Button" library="automation-alerts">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_prompt}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 13:27:10.821" level="INFO">Clicking element 'xpath://*[@id="HTML9"]/div[1]/button[3]'.</msg>
+<status status="PASS" starttime="20231227 13:27:10.820" endtime="20231227 13:27:10.854"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:10.820" endtime="20231227 13:27:10.854"/>
+</kw>
+<kw name="Input ${text} Into Alerts" library="automation-alerts" sourcename="Input ${text} Into Alerts">
+<kw name="Input Text Into Alert" library="SeleniumLibrary">
+<arg>${text}</arg>
+<doc>Types the given ``text`` into an input field in an alert.</doc>
+<status status="PASS" starttime="20231227 13:27:10.855" endtime="20231227 13:27:10.858"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:10.854" endtime="20231227 13:27:10.858"/>
+</kw>
+<kw name="Verify Text Hello ${text}! How are you today? should be visible" library="automation-alerts" sourcename="Verify Text Hello ${text}! How are you today? should be visible">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${path_txt_alert}</arg>
+<arg>Hello ${text}! How are you today?</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20231227 13:27:10.871" level="INFO">Element 'xpath://*[@id="demo"]' contains text 'Hello World! How are you today?'.</msg>
+<status status="PASS" starttime="20231227 13:27:10.859" endtime="20231227 13:27:10.871"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:10.858" endtime="20231227 13:27:10.871"/>
+</kw>
+<kw name="Click Prompt Button" library="automation-alerts">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_prompt}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 13:27:10.873" level="INFO">Clicking element 'xpath://*[@id="HTML9"]/div[1]/button[3]'.</msg>
+<status status="PASS" starttime="20231227 13:27:10.872" endtime="20231227 13:27:10.900"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:10.872" endtime="20231227 13:27:10.900"/>
+</kw>
+<kw name="Input ${text} Into Alerts And Select DISMISS" library="automation-alerts" sourcename="Input ${text} Into Alerts And Select DISMISS">
+<kw name="Input Text Into Alert" library="SeleniumLibrary">
+<arg>${text}</arg>
+<arg>action=DISMISS</arg>
+<doc>Types the given ``text`` into an input field in an alert.</doc>
+<status status="PASS" starttime="20231227 13:27:10.901" endtime="20231227 13:27:10.903"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:10.900" endtime="20231227 13:27:10.903"/>
+</kw>
+<kw name="Verify Text User cancelled the prompt. should be visible" library="automation-alerts">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${path_txt_alert}</arg>
+<arg>User cancelled the prompt.</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20231227 13:27:10.917" level="INFO">Element 'xpath://*[@id="demo"]' contains text 'User cancelled the prompt.'.</msg>
+<status status="PASS" starttime="20231227 13:27:10.904" endtime="20231227 13:27:10.917"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:10.904" endtime="20231227 13:27:10.917"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:10.671" endtime="20231227 13:27:10.918"/>
+</test>
+<test id="s1-t6" name="Verify Double Click Action is working properly." line="90">
+<kw name="Verify that the page is successfully visible." library="automation-testing-practice">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${path_txt_title}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231227 13:27:10.931" level="INFO">Element 'xpath://*[@id="header-inner"]/div[1]/h1' is displayed.</msg>
+<status status="PASS" starttime="20231227 13:27:10.918" endtime="20231227 13:27:10.931"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:10.918" endtime="20231227 13:27:10.931"/>
+</kw>
+<kw name="Clear Text Form Field1" library="automation-double-click">
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${path_txt_field1}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20231227 13:27:10.932" endtime="20231227 13:27:10.960"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:10.932" endtime="20231227 13:27:10.961"/>
+</kw>
+<kw name="Input ${text} Into Field1" library="automation-double-click" sourcename="Input ${text} Into Field1">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${path_txt_field1}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231227 13:27:10.961" level="INFO">Typing text 'World' into text field 'xpath://*[@id="field1"]'.</msg>
+<status status="PASS" starttime="20231227 13:27:10.961" endtime="20231227 13:27:11.016"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:10.961" endtime="20231227 13:27:11.016"/>
+</kw>
+<kw name="Double Click on Copy Text Button" library="automation-double-click">
+<kw name="Double Click Element" library="SeleniumLibrary">
+<arg>${btn_copy_text}</arg>
+<doc>Double clicks the element identified by ``locator``.</doc>
+<msg timestamp="20231227 13:27:11.017" level="INFO">Double clicking element 'xpath://*[@id="HTML10"]/div[1]/button'.</msg>
+<status status="PASS" starttime="20231227 13:27:11.017" endtime="20231227 13:27:11.291"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:11.016" endtime="20231227 13:27:11.291"/>
+</kw>
+<kw name="Verify text text from Field1 copied into Field2." library="automation-double-click">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${expected_text}</var>
+<arg>${path_txt_field1}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231227 13:27:11.302" level="INFO">${expected_text} = </msg>
+<status status="PASS" starttime="20231227 13:27:11.292" endtime="20231227 13:27:11.302"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${actual_text}</var>
+<arg>${path_txt_field2}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231227 13:27:11.315" level="INFO">${actual_text} = </msg>
+<status status="PASS" starttime="20231227 13:27:11.302" endtime="20231227 13:27:11.315"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${expected_text}</arg>
+<arg>${actual_text}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20231227 13:27:11.315" endtime="20231227 13:27:11.317"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:11.292" endtime="20231227 13:27:11.317"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:10.918" endtime="20231227 13:27:11.317"/>
+</test>
+<test id="s1-t7" name="Verify Drag And Drop / Slider Action" line="97">
+<kw name="Verify that the page is successfully visible." library="automation-testing-practice">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${path_txt_title}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231227 13:27:11.331" level="INFO">Element 'xpath://*[@id="header-inner"]/div[1]/h1' is displayed.</msg>
+<status status="PASS" starttime="20231227 13:27:11.319" endtime="20231227 13:27:11.331"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:11.318" endtime="20231227 13:27:11.331"/>
+</kw>
+<kw name="Drag And Drop Box" library="automation-drag-and-drop">
+<kw name="Drag And Drop" library="SeleniumLibrary">
+<arg>${path_drag_box}</arg>
+<arg>${path_drop_box}</arg>
+<doc>Drags the element identified by ``locator`` into the ``target`` element.</doc>
+<status status="PASS" starttime="20231227 13:27:11.332" endtime="20231227 13:27:11.899"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:11.331" endtime="20231227 13:27:11.899"/>
+</kw>
+<kw name="Verify Action Drag And Drop is successfull" library="automation-drag-and-drop">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${path_drop_box}</arg>
+<arg>Dropped!</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20231227 13:27:11.912" level="INFO">Element 'xpath://*[@id="droppable"]' contains text 'Dropped!'.</msg>
+<status status="PASS" starttime="20231227 13:27:11.899" endtime="20231227 13:27:11.912"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:11.899" endtime="20231227 13:27:11.912"/>
+</kw>
+<kw name="Drag Slider in X axis ${side} px" library="automation-drag-and-drop" sourcename="Drag Slider in X axis ${side} px">
+<kw name="Drag And Drop By Offset" library="SeleniumLibrary">
+<arg>${path_slider}</arg>
+<arg>${side}</arg>
+<arg>0</arg>
+<doc>Drags the element identified with ``locator`` by ``xoffset/yoffset``.</doc>
+<status status="PASS" starttime="20231227 13:27:11.913" endtime="20231227 13:27:12.474"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 13:27:17.475" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231227 13:27:12.474" endtime="20231227 13:27:17.475"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:11.912" endtime="20231227 13:27:17.475"/>
+</kw>
+<kw name="Verify Slider in X axis ${side} px" library="automation-drag-and-drop" sourcename="Verify Slider in X axis ${side} px">
+<kw name="Get Horizontal Position" library="SeleniumLibrary">
+<var>${slider_position}</var>
+<arg>${path_slider}</arg>
+<doc>Returns the horizontal position of the element identified by ``locator``.</doc>
+<msg timestamp="20231227 13:27:17.489" level="INFO">${slider_position} = 664</msg>
+<status status="PASS" starttime="20231227 13:27:17.475" endtime="20231227 13:27:17.489"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${slider_position} &gt; 614</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20231227 13:27:17.489" endtime="20231227 13:27:17.489"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:17.475" endtime="20231227 13:27:17.489"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:11.318" endtime="20231227 13:27:17.489"/>
+</test>
+<test id="s1-t8" name="Verify Frame is working properly." line="104">
+<kw name="Verify that the page is successfully visible." library="automation-testing-practice">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${path_txt_title}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231227 13:27:17.501" level="INFO">Element 'xpath://*[@id="header-inner"]/div[1]/h1' is displayed.</msg>
+<status status="PASS" starttime="20231227 13:27:17.490" endtime="20231227 13:27:17.501"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:17.490" endtime="20231227 13:27:17.501"/>
+</kw>
+<kw name="Enter name in frame with ${user_data}[name]" library="automation-frame" sourcename="Enter name in frame with ${name}">
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>frame-one796456169</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20231227 13:27:17.502" level="INFO">Selecting frame 'frame-one796456169'.</msg>
+<status status="PASS" starttime="20231227 13:27:17.501" endtime="20231227 13:27:17.529"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${default_frame_path}[name]</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231227 13:27:17.530" level="INFO">Typing text 'thanachai' into text field 'xpath://*[@id="RESULT_TextField-0"]'.</msg>
+<status status="PASS" starttime="20231227 13:27:17.529" endtime="20231227 13:27:17.609"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:17.501" endtime="20231227 13:27:17.610"/>
+</kw>
+<kw name="Enter date in frame with ${date}" library="automation-frame" sourcename="Enter date in frame with ${date}">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${default_frame_path}[date]</arg>
+<arg>${date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231227 13:27:17.610" level="INFO">Typing text '01/01/2001' into text field 'xpath://*[@id="RESULT_TextField-2"]'.</msg>
+<status status="PASS" starttime="20231227 13:27:17.610" endtime="20231227 13:27:17.682"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:17.610" endtime="20231227 13:27:17.682"/>
+</kw>
+<kw name="Select country in frame with ${user_data}[job]" library="automation-frame" sourcename="Select country in frame with ${job}">
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${default_frame_path}[job]</arg>
+<arg>${job}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20231227 13:27:17.683" level="INFO">Selecting options from selection list 'xpath://*[@id="RESULT_RadioButton-3"]' by value Radio-0.</msg>
+<status status="PASS" starttime="20231227 13:27:17.683" endtime="20231227 13:27:17.735"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:17.682" endtime="20231227 13:27:17.735"/>
+</kw>
+<kw name="Click Submit Button In Frame" library="automation-frame">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${default_frame_path}[submit_btn]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 13:27:17.736" level="INFO">Clicking element 'xpath://*[@id="FSsubmit"]'.</msg>
+<status status="PASS" starttime="20231227 13:27:17.736" endtime="20231227 13:27:18.425"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:17.736" endtime="20231227 13:27:18.425"/>
+</kw>
+<kw name="Verify Text An error has occurred should be visible" library="automation-frame">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${path_frame}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231227 13:27:18.442" level="INFO">Element 'xpath:/html/body/div/div[3]' is displayed.</msg>
+<status status="PASS" starttime="20231227 13:27:18.425" endtime="20231227 13:27:18.442"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:18.425" endtime="20231227 13:27:18.442"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:17.490" endtime="20231227 13:27:18.442"/>
+</test>
+<test id="s1-t9" name="Verify Resize element is working properly." line="112">
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20231227 13:27:18.444" endtime="20231227 13:27:18.445"/>
+</kw>
+<kw name="Resize Element in x axis with: ${x_axis} and y axis with: ${y_axis}" library="automation-drag-and-drop" sourcename="Resize Element in x axis with: ${x_axis} and y axis with: ${y_axis}">
+<kw name="Get Element Size" library="SeleniumLibrary">
+<var>${size_x1}</var>
+<var>${size_y1}</var>
+<arg>${resizeable_box}</arg>
+<doc>Returns width and height of the element identified by ``locator``.</doc>
+<msg timestamp="20231227 13:27:18.466" level="INFO">${size_x1} = 150</msg>
+<msg timestamp="20231227 13:27:18.466" level="INFO">${size_y1} = 150</msg>
+<status status="PASS" starttime="20231227 13:27:18.446" endtime="20231227 13:27:18.466"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${size_x1}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20231227 13:27:18.466" level="INFO">${size_x1} = 150</msg>
+<status status="PASS" starttime="20231227 13:27:18.466" endtime="20231227 13:27:18.466"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${size_y1}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20231227 13:27:18.466" level="INFO">${size_y1} = 150</msg>
+<status status="PASS" starttime="20231227 13:27:18.466" endtime="20231227 13:27:18.466"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${x_axis}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20231227 13:27:18.467" level="INFO">${x_axis} = 100</msg>
+<status status="PASS" starttime="20231227 13:27:18.466" endtime="20231227 13:27:18.467"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${y_axis}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20231227 13:27:18.467" level="INFO">${y_axis} = 100</msg>
+<status status="PASS" starttime="20231227 13:27:18.467" endtime="20231227 13:27:18.467"/>
+</kw>
+<kw name="Drag And Drop By Offset" library="SeleniumLibrary">
+<arg>${path_resize}</arg>
+<arg>${x_axis}</arg>
+<arg>${y_axis}</arg>
+<doc>Drags the element identified with ``locator`` by ``xoffset/yoffset``.</doc>
+<status status="PASS" starttime="20231227 13:27:18.467" endtime="20231227 13:27:19.003"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:18.445" endtime="20231227 13:27:19.003"/>
+</kw>
+<kw name="Verify Element is resized" library="automation-drag-and-drop">
+<kw name="Get Element Size" library="SeleniumLibrary">
+<var>${size_x2}</var>
+<var>${size_y2}</var>
+<arg>${resizeable_box}</arg>
+<doc>Returns width and height of the element identified by ``locator``.</doc>
+<msg timestamp="20231227 13:27:19.019" level="INFO">${size_x2} = 232</msg>
+<msg timestamp="20231227 13:27:19.019" level="INFO">${size_y2} = 232</msg>
+<status status="PASS" starttime="20231227 13:27:19.003" endtime="20231227 13:27:19.019"/>
+</kw>
+<if>
+<branch type="IF" condition="${x_axis} == 0">
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${size_x1}</arg>
+<arg>${size_x2}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="NOT RUN" starttime="20231227 13:27:19.019" endtime="20231227 13:27:19.019"/>
+</kw>
+<status status="NOT RUN" starttime="20231227 13:27:19.019" endtime="20231227 13:27:19.019"/>
+</branch>
+<branch type="ELSE">
+<kw name="Evaluate" library="BuiltIn">
+<var>${result_x}</var>
+<arg>${size_x1} + ${x_axis} - 18</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231227 13:27:19.020" level="INFO">${result_x} = 232</msg>
+<status status="PASS" starttime="20231227 13:27:19.020" endtime="20231227 13:27:19.020"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${result_x}</arg>
+<arg>${size_x2}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" starttime="20231227 13:27:19.020" endtime="20231227 13:27:19.020"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:19.019" endtime="20231227 13:27:19.020"/>
+</branch>
+<status status="PASS" starttime="20231227 13:27:19.019" endtime="20231227 13:27:19.020"/>
+</if>
+<if>
+<branch type="IF" condition="${y_axis} == 0">
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${size_y1}</arg>
+<arg>${size_y2}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="NOT RUN" starttime="20231227 13:27:19.020" endtime="20231227 13:27:19.020"/>
+</kw>
+<status status="NOT RUN" starttime="20231227 13:27:19.020" endtime="20231227 13:27:19.020"/>
+</branch>
+<branch type="ELSE">
+<kw name="Evaluate" library="BuiltIn">
+<var>${result_y}</var>
+<arg>${size_y1} + ${y_axis} - 18</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231227 13:27:19.020" level="INFO">${result_y} = 232</msg>
+<status status="PASS" starttime="20231227 13:27:19.020" endtime="20231227 13:27:19.020"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${result_y}</arg>
+<arg>${size_y2}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" starttime="20231227 13:27:19.020" endtime="20231227 13:27:19.021"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:19.020" endtime="20231227 13:27:19.021"/>
+</branch>
+<status status="PASS" starttime="20231227 13:27:19.020" endtime="20231227 13:27:19.021"/>
+</if>
+<status status="PASS" starttime="20231227 13:27:19.003" endtime="20231227 13:27:19.021"/>
+</kw>
+<status status="PASS" starttime="20231227 13:27:18.444" endtime="20231227 13:27:19.021"/>
 </test>
 <kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20231226 09:49:22.547" endtime="20231226 09:49:24.618"/>
+<status status="PASS" starttime="20231227 13:27:19.022" endtime="20231227 13:27:21.094"/>
 </kw>
-<status status="PASS" starttime="20231226 09:49:15.700" endtime="20231226 09:49:24.618"/>
+<status status="PASS" starttime="20231227 13:26:52.224" endtime="20231227 13:27:21.094"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="9" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Automation-Testing-Practice">Automation-Testing-Practice</stat>
+<stat pass="9" fail="0" skip="0" id="s1" name="Automation-Testing-Practice">Automation-Testing-Practice</stat>
 </suite>
 </statistics>
 <errors>

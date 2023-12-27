@@ -19,7 +19,7 @@ ${txt_title}                    Automation Testing Practice
 
 
 *** Keywords ***
-Verify that page is visible successfully
+Verify that the page is successfully visible.
     Element Should Be Visible    ${path_txt_title}
 
 Enter name with ${name}
