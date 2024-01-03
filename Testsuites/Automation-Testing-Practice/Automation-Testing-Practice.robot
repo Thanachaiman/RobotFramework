@@ -19,97 +19,97 @@ Suite Teardown      Close Browser
 
 *** Test Cases ***
 Verify that the website is working properly.
-    Verify that the page is successfully visible.
-    Enter name with ${user_data}[name]
-    Verify name is ${user_data}[name]
-    Enter email with ${user_data}[email]
-    Verify email is ${user_data}[email]
-    Enter phone with ${user_data}[phone]
-    Verify phone is ${user_data}[phone]
-    Enter address with ${user_data}[address]
-    Verify address is ${user_data}[address]
-    Select gender with ${user_data}[gender(male)]
-    Verify ${user_data}[gender(male)] is selected
-    Select check days with @{days}
-    Verify checkbox should be selected @{days}
-    Select country with ${country}
-    Verify selected country is ${country}
-    Select color with ${color}
-    Verify selected color is ${color}
-    Enter date with ${date}
-    Verify date is ${date}
-    Click link open cart
-    Verify url open cart
-    Go Back
-    Verify that the page is successfully visible.
-    Click link orange HRM
-    Verify url orange HRM
-    Go Back
-    Verify that the page is successfully visible.
-    Click hyperlink home
-    Verify data is clear
+    Given Verify that the page is successfully visible.
+    When Enter name with ${user_data}[name]
+    Then Verify name is ${user_data}[name]
+    When Enter email with ${user_data}[email]
+    Then Verify email is ${user_data}[email]
+    When Enter phone with ${user_data}[phone]
+    Then Verify phone is ${user_data}[phone]
+    When Enter address with ${user_data}[address]
+    Then Verify address is ${user_data}[address]
+    When Select gender with ${user_data}[gender(male)]
+    Then Verify ${user_data}[gender(male)] is selected
+    When Select check days with @{days}
+    Then Verify checkbox should be selected @{days}
+    When Select country with ${country}
+    Then Verify selected country is ${country}
+    When Select color with ${color}
+    Then Verify selected color is ${color}
+    When Enter date with ${date}
+    Then Verify date is ${date}
+    When Click link open cart
+    Then Verify url open cart
+    When Go Back
+    Then Verify that the page is successfully visible.
+    When Click link orange HRM
+    Then Verify url orange HRM
+    When Go Back
+    Then Verify that the page is successfully visible.
+    When Click hyperlink home
+    Then Verify data is clear
 
 Verify that the Pagination is working properly.
-    Verify that the page is successfully visible.
-    Verify pageination is default
-    Chage pagination to page ${number_of_page}
-    Verify pagination is page ${number_of_page}
-    Select check box @{check_box} of page ${number_of_page}
-    Verify check box @{check_box} of page ${number_of_page} should selected
+    When Verify that the page is successfully visible.
+    Then Verify pageination is default
+    When Chage pagination to page ${number_of_page}
+    Then Verify pagination is page ${number_of_page}
+    When Select check box @{check_box} of page ${number_of_page}
+    Then Verify check box @{check_box} of page ${number_of_page} should selected
 
 Verify that the Search Bar is working properly.
-    Verify that the page is successfully visible.
-    Search with ${empty_data}
-    Verify Please enter text to search is visible
-    Search with ${anime_name}
-    Verify search result of search is visible
+    Given Verify that the page is successfully visible.
+    When Search with ${empty_data}
+    Then Verify Please enter text to search is visible
+    When Search with ${anime_name}
+    Then Verify search result of search is visible
 
 Verify New Browser Window is working properly.
-    Verify that the page is successfully visible.
-    Click New Windows Browser button
-    Verify New Browser Is Opened
-    Switch browser to browser ${browser_number}
+    Given Verify that the page is successfully visible.
+    When Click New Windows Browser button
+    Then Verify New Browser Is Opened
+    When Switch browser to browser ${browser_number}
 
 Verify JS Alerts is working properly.
-    Verify that the page is successfully visible.
-    Click Alert Button
-    Verify Alert Should Be Present
-    Click Confirm Box Button
-    Click Confirm In Alert
-    Verify Text You pressed OK! should be visible
-    Click Confirm Box Button
-    Click Dismiss In Alert
-    Verify Text You pressed Cancel! should be visible
-    Click Prompt Button
-    Input ${text} Into Alerts
-    Verify Text Hello ${text}! How are you today? should be visible
-    Click Prompt Button
-    Input ${text} Into Alerts And Select DISMISS
-    Verify Text User cancelled the prompt. should be visible
+    Given Verify that the page is successfully visible.
+    When Click Alert Button
+    Then Verify Alert Should Be Present
+    When Click Confirm Box Button
+    And Click Confirm In Alert
+    Then Verify Text You pressed OK! should be visible
+    When Click Confirm Box Button
+    And Click Dismiss In Alert
+    Then Verify Text You pressed Cancel! should be visible
+    When Click Prompt Button
+    And Input ${text} Into Alerts
+    Then Verify Text Hello ${text}! How are you today? should be visible
+    When Click Prompt Button
+    And Input ${text} Into Alerts And Select DISMISS
+    Then Verify Text User cancelled the prompt. should be visible
 
 Verify Double Click Action is working properly.
-    Verify that the page is successfully visible.
-    Clear Text Form Field1
-    Input ${text} Into Field1
-    Double Click on Copy Text Button
-    Verify text text from Field1 copied into Field2.
+    Given Verify that the page is successfully visible.
+    When Clear Text Form Field1
+    And Input ${text} Into Field1
+    And Double Click on Copy Text Button
+    Then Verify text text from Field1 copied into Field2.
 
 Verify Drag And Drop / Slider Action
-    Verify that the page is successfully visible.
-    Drag And Drop Box
-    Verify Action Drag And Drop is successfull
-    Drag Slider in X axis ${side} px
-    Verify Slider in X axis ${side} px
+    Given Verify that the page is successfully visible.
+    When Drag And Drop Box
+    Then Verify Action Drag And Drop is successfull
+    When Drag Slider in X axis ${side} px
+    Then Verify Slider in X axis ${side} px
 
 Verify Frame is working properly.
-    Verify that the page is successfully visible.
-    Enter name in frame with ${user_data}[name]
-    Enter date in frame with ${date}
-    Select country in frame with ${user_data}[job]
-    Click Submit Button In Frame
-    Verify Text An error has occurred should be visible
+    Given Verify that the page is successfully visible.
+    When Enter name in frame with ${user_data}[name]
+    And Enter date in frame with ${date}
+    And Select country in frame with ${user_data}[job]
+    And Click Submit Button In Frame
+    Then Verify Text An error has occurred should be visible
 
 Verify Resize element is working properly.
-    Unselect Frame
-    Resize Element in x axis with: ${x_axis} and y axis with: ${y_axis}
-    Verify Element is resized
+    Given Unselect Frame
+    When Resize Element in x axis with: ${x_axis} and y axis with: ${y_axis}
+    Then Verify Element is resized
