@@ -25,7 +25,7 @@ jobs:
           python -m pip install -r requirement.txt
 
       - name: Run Test
-        run: python -m robot ..\Testsuites\Automation-Testing-Practice\Automation-Testing-Practice.robot
+        run: python -m robot ./Testsuites/Automation-Testing-Practice/Automation-Testing-Practice.robot
       # - name: Run Test and create report
       #     run: python -m robot -d reports -x junit-report.xml "testcases/functional_tests"
       - name: Run Robot Framework tests and generate report
