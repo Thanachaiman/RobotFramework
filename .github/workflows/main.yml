@@ -8,7 +8,6 @@ on:
   workflow_dispatch:
 
 jobs:
-<<<<<<< HEAD
   Run-Test:
     runs-on: ubuntu-20.04
     steps:
@@ -26,27 +25,8 @@ jobs:
       - name: Run Test
         run: python -m robot --outputdir Reports\Automation-Testing-Practice\ Testsuites\Automation-Testing-Practice\Automation-Testing-Practice.robot
       - name: Run Test and create report
-=======
-    Run-Test:
-      runs-on: ubuntu-20.04
-      steps:
-        - name: Checkout repository
-          uses: actions/checkout@v1
-        - uses: actions/cache@v2
-          id: cache
-          with:
-            path: ~/.cache/pip
-            key: ${{ runner.os }}-pip-${{ hashFiles('**/requirement.txt') }}
-        - name: Install pip dependencies
-          run: |
-            pip install --upgrade pip
-            pip install -r requirement.txt
-        - name: Run Test
-          run: python -m robot --outputdir \Reports\Automation-Testing-Practice\ \Testsuites\Automation-Testing-Practice\Automation-Testing-Practice.robot
-        - name: Run Test and create report
->>>>>>> 9efa7c6ba9b95bed26b9dbacb0a0be52e6189436
-        #   run: python -m robot -d reports -x junit-report.xml "testcases/functional_tests"
-        # - name: Run Robot Framework tests and generate report
+        run: python -m robot -d reports -x junit-report.xml "testcases/functional_tests"
+      - name: Run Robot Framework tests and generate report
         run: |
           echo "ROBOT_RC=$?" >> "$GITHUB_ENV"
       # - name: If Auto Test Pass Rate Not 100%, Job Will Fail
