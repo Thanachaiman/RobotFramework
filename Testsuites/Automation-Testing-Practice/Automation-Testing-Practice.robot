@@ -109,7 +109,10 @@ Verify Frame is working properly.
     And Click Submit Button In Frame
     Then Verify Text An error has occurred should be visible
 
+# use 5555555
+
 Verify Resize element is working properly.
     Given Unselect Frame
     When Resize Element in x axis with: ${x_axis} and y axis with: ${y_axis}
     Then Verify Element is resized
+    Given Verify that the page is successfully visible.
