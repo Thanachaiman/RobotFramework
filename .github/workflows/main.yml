@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # This workflow will install Python dependencies, run tests and lint with a variety of Python versions
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 
@@ -70,4 +70,4 @@ jobs:
           with:
             name: robot-test-results
             path: results
->>>>>>> 7252c24a112b3db85e05a18546d8e3caf660069f
+
