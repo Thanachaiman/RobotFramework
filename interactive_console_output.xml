@@ -1,29 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.12 on win32)" generated="20240112 13:36:38.052" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.10.12 on win32)" generated="20240114 23:06:37.641" rpa="false" schemaversion="3">
 <suite id="s1" name="Robot Interactive Console" source="c:\Users\thanachai\.vscode\extensions\robocorp.robotframework-lsp-1.11.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
 <test id="s1-t1" name="Default Task/Test" line="5">
 <kw name="Interpreter Main Loop" library="MainLoop">
-<kw name="Verify that the page is successfully visible.">
-<msg timestamp="20240112 13:36:38.449" level="FAIL">No keyword with name 'Verify that the page is successfully visible.' found.</msg>
-<status status="FAIL" starttime="20240112 13:36:38.449" endtime="20240112 13:36:38.449"/>
+<status status="PASS" starttime="20240114 23:06:37.674" endtime="20240114 23:06:40.053"/>
 </kw>
-<kw name="Search with ${search_value}">
-<status status="NOT RUN" starttime="20240112 13:36:38.452" endtime="20240112 13:36:38.452"/>
-</kw>
-<kw name="Click search buuton on keyboard">
-<status status="NOT RUN" starttime="20240112 13:36:38.453" endtime="20240112 13:36:38.453"/>
-</kw>
-<kw name="Search results for the word &quot;g&quot;">
-<status status="NOT RUN" starttime="20240112 13:36:38.454" endtime="20240112 13:36:38.454"/>
-</kw>
-<kw name="Verify that the &amp;{result_value} and &amp;{not_result_value} of ${search_value} are relevant to the search query.">
-<status status="NOT RUN" starttime="20240112 13:36:38.455" endtime="20240112 13:36:38.455"/>
-</kw>
-<status status="PASS" starttime="20240112 13:36:38.077" endtime="20240112 13:36:39.807"/>
-</kw>
-<status status="PASS" starttime="20240112 13:36:38.076" endtime="20240112 13:36:39.807"/>
+<status status="PASS" starttime="20240114 23:06:37.674" endtime="20240114 23:06:40.053"/>
 </test>
-<status status="PASS" starttime="20240112 13:36:38.055" endtime="20240112 13:36:39.808"/>
+<status status="PASS" starttime="20240114 23:06:37.644" endtime="20240114 23:06:40.053"/>
 </suite>
 <statistics>
 <total>
