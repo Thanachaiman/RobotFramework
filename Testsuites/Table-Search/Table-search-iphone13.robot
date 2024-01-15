@@ -14,59 +14,65 @@ Suite Teardown      close application
 
 
 *** Variables ***
-${search_value}         g
-${search_value_2}       ddd
-${other_value}          tulip
-${item}                 Ginger
-@{result_value}         Ginger    Gladiolus    Gardenia
-@{not_result_value}     Tulip    Orchid
-&{item_data}            year=2007    price=49.98
+${search_value}             g
+${search_value_2}           ddd
+${other_value}              tulip
+${item}                     Ginger
+@{result_value}             Ginger    Gladiolus    Gardenia
+@{not_result_search}        Tulip    Orchid
+@{not_result_value_2}       Tulip    Orchid
+&{item_data}                year=2007    price=49.98
+@{not_result}               ${EMPTY}
 
 
 *** Test Cases ***
 Search in table search *Search with EMPTY
-    Verify home page is successfully visible.
+    Given Verify home page is successfully visible.
     # Search with "g"
-    Input text in search field with ${EMPTY}
-    Click search button on keyboard
+    When Input text in search field with ${EMPTY}
+    And Click search button on keyboard
 
     # Search results for the word "EMPTY"
-    # Verify that the &{result_value} and &{not_result_value} of ${search_value} are relevant to the search query.
+    Then Verify result of ${search_value} are ${result_value}
 
 Search in table search *Have result
     # Search with "g"
-    Input text in search field with ${search_value}
-    Click search button on keyboard
+    When Input text in search field with ${search_value}
+    And Click search button on keyboard
 
     # Search results for the word "g"
-    # Verify that the @{result_value} and @{not_result_value} of ${search_value} are relevant to the search query.
+    Verify result of ${search_value} are ${result_value}
+    Verify result of ${search_value} are not @{not_result_search}
 
 Check the display when pressing an item in a table.
-    Open detail of ${item}
-    Verify detail page of ${item} is successfully visible
-    Verify year and price of ${item} is &{item_data}
-    Click on back button
+    # Open detail
+    When Open detail of ${item}
+    Then Verify detail page of ${item} is successfully visible
+    And Verify year and price of ${item} is &{item_data}
+    # Go back
+    When Click on back button
+    Then Verify home page is successfully visible.
 
 Search in table search *Not have result
     # clear text
-    Clear text in search field
-    Verify that the text is cleared.
+    When Clear text in search field
+    Then Verify that the text is cleared.
     # Search with "ddd"
-    Input text in search field with ${search_value_2}
-    Click search button on keyboard
+    When Input text in search field with ${search_value_2}
+    Then Click search button on keyboard
 
-    # Search results for the word "g"
-    # Verify that the &{result_value} and &{not_result_value} of ${search_value} are relevant to the search query.
+    # Search results for the word "ddd"
+    Verify result of ${search_value} are not @{not_result_search}
 
 Verify the functionality of the cross icon
     # input Text
-    Input text in search field with ${search_value}
+    When Input text in search field with ${search_value}
     # clear text
-    Clear text in search field
-    Verify that the text is cleared.
+    And Clear text in search field
+    Then Verify that the text is cleared.
 
 Verify the functionality of the Cancel Button
     # Search with "g"
-    Input text in search field with ${search_value}
-    Click Cancel button
-    Verify home page is successfully visible.
+    When Input text in search field with ${search_value}
+    And Click Cancel button
+    Then Verify home page is successfully visible.

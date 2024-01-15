@@ -1,3 +1,7 @@
+*** Settings ***
+Library     XML
+
+
 *** Variables ***
 ${default_timeout}              5000ms
 ${search_field}                 accessibility_id=Search
@@ -21,13 +25,38 @@ Click search button on keyboard
     Wait Until Element Is Visible    ${search_button_on_keyboard}    ${default_timeout}
     Click Element    ${search_button_on_keyboard}
 
-Verify that the @{result_value} and @{not_result_value} of ${search_value} are relevant to the search query.
-    Sleep    2S
-    FOR    ${value}    IN    @{result_value}
-        Text Should Be Visible    ${value}
+Verify that the ${results} and ${not_results} of ${search_value} are relevant to the search query.
+    FOR    ${result}    IN    @{results}
+        Element Should Be Visible
+        ...    xpath=(//XCUIElementTypeStaticText[@name="${result}"])[1]
+        ...    timeout=${default_timeout}
     END
-    FOR    ${value}    IN    @{not_result_value}
-        Text Should Be Not Visible    ${value}
+    FOR    ${result}    IN    @{not_results}
+        ${isVisible}=    Run Keyword And Return Status
+        ...    Element Should Be Visible
+        ...    xpath=(//XCUIElementTypeStaticText[@name="${result}"])[1]
+        IF    ${isVisible}
+            Fail
+            Log    Test failed because condition is True
+        END
+    END
+
+Verify result of ${search_value} are ${result}
+    FOR    ${result}    IN    @{result}
+        Element Should Be Visible
+        ...    xpath=(//XCUIElementTypeStaticText[@name="${result}"])[1]
+        ...    timeout=${default_timeout}
+    END
+
+Verify result of ${search_value} are not ${result}
+    FOR    ${result}    IN    @{result}
+        ${isVisible}=    Run Keyword And Return Status
+        ...    Element Should Be Visible
+        ...    xpath=(//XCUIElementTypeStaticText[@name="${result}"])[1]
+        IF    ${isVisible}
+            Fail
+            Log    Test failed because condition is True
+        END
     END
 
 Clear text in search field
@@ -37,7 +66,7 @@ Clear text in search field
     Click Element    ${cross_icon}
 
 Verify that the text is cleared.
-    ${element_value} =    Get Text    ${search_field_when_click}
+    ${element_value}=    Get Text    ${search_field_when_click}
     Element Text Should Be    ${search_field_when_click}    Search
 
 Click Cancel button
