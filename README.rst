@@ -45,6 +45,7 @@ If you already have Python_ with `pip <https://pip.pypa.io>`_ installed,
 you can simply run::
 
     pip install robotframework
+    pip install robotframework-seleniumLibrary 
 
 For more detailed installation instructions, including installing Python, see
 `<INSTALL.rst>`__.
